@@ -29,3 +29,9 @@ npm run check
 ```
 
 Vor einer Veröffentlichung echte Inhalte, Kontaktdaten und rechtliche Texte ergänzen und auf realen Mobilgeräten sowie mit Tastatur prüfen. Kein Deployment eingerichtet. Der kleine Node-Server dient ausschließlich der lokalen Vorschau.
+
+## GitHub-Pages-Vorschau
+
+Der Workflow `.github/workflows/pages.yml` veröffentlicht ausschließlich HTML, CSS, JavaScript und `assets/`. Kein eigener Server und keine Installation auf dem Endgerät sind erforderlich. Im Repository unter **Settings → Pages → Build and deployment → Source** die Option **GitHub Actions** auswählen. Anschließend unter **Actions → Website-Vorschau auf GitHub Pages → Run workflow** den Branch `main` starten, falls der erste Lauf vor Aktivierung fehlgeschlagen ist.
+
+GitHub Pages aus privaten Repositories setzt einen passenden GitHub-Tarif voraus. Die Sichtbarkeit des Repositories wird durch diesen Workflow nicht geändert. Keine eigene Domain eintragen. Der Entwurf enthält `noindex, nofollow` als Suchmaschinenhinweis; die öffentliche Adresse ist kein Zugriffsschutz.
