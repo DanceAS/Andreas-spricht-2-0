@@ -36,6 +36,10 @@ jobs:
             mkdir -p _site/bordeaux/assets
             cp -R assets/. _site/bordeaux/assets/
           fi
+          if [ -d bordeaux/assets ]; then
+            mkdir -p _site/bordeaux/assets
+            cp -R bordeaux/assets/. _site/bordeaux/assets/
+          fi
           touch _site/.nojekyll
       - name: Vorschau hochladen
         uses: actions/upload-pages-artifact@v3
