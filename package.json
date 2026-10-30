@@ -1,0 +1,5 @@
+{
+  "name": "andreas-spricht", "version": "1.0.0", "private": true,
+  "description": "Lokaler Website-Entwurf für Andreas spricht",
+  "scripts": { "dev": "node server.mjs", "start": "node server.mjs", "check": "node --check app.js && node --check content.js && node --check server.mjs" }
+}
