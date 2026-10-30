@@ -23,9 +23,12 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Ausschließlich Website-Dateien vorbereiten
         run: |
-          mkdir -p _site/assets
+          mkdir -p _site
           cp index.html styles.css content.js app.js _site/
-          cp -R assets/. _site/assets/
+          if [ -d assets ]; then
+            mkdir -p _site/assets
+            cp -R assets/. _site/assets/
+          fi
           touch _site/.nojekyll
       - name: Vorschau hochladen
         uses: actions/upload-pages-artifact@v3
