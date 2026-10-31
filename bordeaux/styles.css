@@ -120,3 +120,16 @@
 @media(max-width:600px){
   #start .hero-copy > .eyebrow { font-size:9px; }
 }
+
+/* Ausschließlich die Typografie im Hörprobenbereich verfeinern. */
+#hoerproben .eyebrow { font-size:11px; }
+#hoerproben .placeholder-note {
+  font-size:16px;
+  line-height:1.6;
+}
+#hoerproben .sample p { font-size:14px; }
+#hoerproben .time-row > span:last-child { font-size:11px; }
+@media(max-width:600px){
+  #hoerproben .eyebrow { font-size:9px; }
+  #hoerproben .placeholder-note { font-size:15px; }
+}
