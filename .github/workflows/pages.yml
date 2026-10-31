@@ -30,7 +30,7 @@ jobs:
             cp -R assets/. _site/assets/
           fi
           mkdir -p _site/bordeaux
-          cp bordeaux/index.html bordeaux/styles.css bordeaux/hero-image-v2.css bordeaux/studio-content.js _site/bordeaux/
+          cp bordeaux/index.html bordeaux/styles.css bordeaux/hero-image-v2.css bordeaux/studio-content.js bordeaux/sample-content.js _site/bordeaux/
           cp content.js app.js _site/bordeaux/
           if [ -d assets ]; then
             mkdir -p _site/bordeaux/assets
