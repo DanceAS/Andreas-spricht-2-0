@@ -103,3 +103,14 @@
 }
 #kontakt .contact-button:hover { background:#ead6da; }
 #kontakt .contact-button:focus-visible { outline:3px solid var(--paper); outline-offset:5px; }
+
+/* Dezente Vergrößerungen ausschließlich für Navigation und Hero-Abschluss. */
+@media(min-width:851px){
+  .header nav { font-size:15px; }
+}
+.hero-bottom { font-size:13px; }
+.hero-bottom > a { font-size:11px; }
+@media(max-width:600px){
+  .hero-bottom { font-size:12px; }
+  .hero-bottom > a { font-size:9px; }
+}

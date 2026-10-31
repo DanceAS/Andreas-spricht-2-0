@@ -33,7 +33,7 @@
   position: absolute;
   left: 38px;
   right: 24px;
-  bottom: 70px;
+  bottom: 24px;
   z-index: 2;
   color: var(--paper);
   font: italic 26px/1.3 var(--serif);
@@ -52,7 +52,7 @@
 @media (max-width: 600px) {
   .hero-visual { height: 400px; max-width: 390px; margin: auto; }
   .hero-visual > .hero-visual__image { object-position: 40% 0%; }
-  .hero-visual > .hero-visual__caption { left: 28px; right: 20px; bottom: 42px; }
+  .hero-visual > .hero-visual__caption { left: 28px; right: 20px; bottom: 20px; }
 }
 /* iPad: gegenüber der vorherigen Position exakt 25px zurück nach links,
    auch wenn der vorherige Versatz an der linken Bildkante begrenzt war. */
