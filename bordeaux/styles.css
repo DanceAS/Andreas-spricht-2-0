@@ -114,3 +114,9 @@
   .hero-bottom { font-size:12px; }
   .hero-bottom > a { font-size:9px; }
 }
+
+/* Nur die Sprecherzeile im Startbereich um einen Pixel vergrößern. */
+#start .hero-copy > .eyebrow { font-size:11px; }
+@media(max-width:600px){
+  #start .hero-copy > .eyebrow { font-size:9px; }
+}
