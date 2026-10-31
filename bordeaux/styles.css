@@ -33,3 +33,20 @@
   object-fit:cover;
   object-position:50% 30%;
 }
+
+/* Lesetext und dezente Unterschrift ausschließlich im Über-mich-Abschnitt. */
+#ueber-mich .about-copy > p:not(.eyebrow):not(.about-lead) {
+  font-size:20px;
+  line-height:1.6;
+}
+#ueber-mich .about-copy > p:last-of-type { margin-bottom:0; }
+#ueber-mich .signature {
+  font-size:27px;
+  margin-top:16px;
+}
+@media(max-width:1100px){
+  #ueber-mich .about-copy > p:not(.eyebrow):not(.about-lead) { font-size:19px; }
+}
+@media(max-width:600px){
+  #ueber-mich .about-copy > p:not(.eyebrow):not(.about-lead) { font-size:18px; }
+}
