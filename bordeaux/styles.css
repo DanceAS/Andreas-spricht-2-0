@@ -84,3 +84,22 @@
 #released-books .released-book > div:last-child { min-width:0; }
 #released-books .released-book p { font-size:14px; }
 #released-books .released-book .book-link { display:inline-block; text-underline-offset:3px; }
+
+/* Kontakt-Button ausschließlich in der Bordeaux-Version. */
+#kontakt .contact-button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:14px 28px;
+  border:1px solid var(--paper);
+  border-radius:999px;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:16px;
+  font-weight:600;
+  line-height:1.4;
+  transition:background .2s;
+}
+#kontakt .contact-button:hover { background:#ead6da; }
+#kontakt .contact-button:focus-visible { outline:3px solid var(--paper); outline-offset:5px; }
