@@ -19,7 +19,7 @@
   margin: 0;
   padding: 0;
   object-fit: cover;
-  object-position: 48% 0%;
+  object-position: 32% 0%;
 }
 .hero-visual::after {
   content: "";
@@ -42,11 +42,15 @@
 @media (min-width: 1500px) {
   .hero-visual { height: 600px; }
 }
+@media (min-width: 851px) and (max-width: 1100px) {
+  .hero-visual > .hero-visual__image { object-position: 40% 0%; }
+}
 @media (min-width: 601px) and (max-width: 850px) {
   .hero-visual { height: 450px; }
-  .hero-visual > .hero-visual__image { object-position: 49% 0%; }
+  .hero-visual > .hero-visual__image { object-position: 42% 0%; }
 }
 @media (max-width: 600px) {
   .hero-visual { height: 400px; max-width: 390px; margin: auto; }
+  .hero-visual > .hero-visual__image { object-position: 40% 0%; }
   .hero-visual > .hero-visual__caption { left: 28px; right: 20px; bottom: 42px; }
 }
