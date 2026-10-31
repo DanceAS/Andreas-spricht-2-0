@@ -43,14 +43,21 @@
   .hero-visual { height: 600px; }
 }
 @media (min-width: 851px) and (max-width: 1100px) {
-  .hero-visual > .hero-visual__image { object-position: 40% 0%; }
+  .hero-visual > .hero-visual__image { object-position: min(0px, calc(40% + 70px)) 0%; }
 }
 @media (min-width: 601px) and (max-width: 850px) {
   .hero-visual { height: 450px; }
-  .hero-visual > .hero-visual__image { object-position: 42% 0%; }
+  .hero-visual > .hero-visual__image { object-position: min(0px, calc(42% + 70px)) 0%; }
 }
 @media (max-width: 600px) {
   .hero-visual { height: 400px; max-width: 390px; margin: auto; }
   .hero-visual > .hero-visual__image { object-position: 40% 0%; }
   .hero-visual > .hero-visual__caption { left: 28px; right: 20px; bottom: 42px; }
+}
+/* iPad-Querformat: ausschließlich das Motiv um 70px nach rechts versetzen.
+   Die linke Bildkante ist die Grenze, damit keine leere Fläche entsteht. */
+@media (min-width: 1101px) and (max-width: 1366px) {
+  .hero-visual > .hero-visual__image {
+    object-position: min(0px, calc(32% + 70px)) 0%;
+  }
 }
