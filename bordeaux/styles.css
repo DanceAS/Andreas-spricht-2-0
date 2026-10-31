@@ -67,3 +67,20 @@
 #studio-books .studio-book > div:last-child { min-width:0; }
 #studio-books .studio-book p { font-size:14px; }
 #studio-books .studio-book .book-link { display:inline-block; text-underline-offset:3px; }
+
+/* Zuletzt erschienen: identische Gestaltung wie die fertige Studio-Karte. */
+#released-books .released-cover {
+  aspect-ratio:auto;
+  border:0;
+  background:transparent;
+}
+#released-books .released-cover::before { display:none; }
+#released-books .released-cover img {
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+#released-books .released-book > div:last-child { min-width:0; }
+#released-books .released-book p { font-size:14px; }
+#released-books .released-book .book-link { display:inline-block; text-underline-offset:3px; }
