@@ -16,3 +16,9 @@
     font-size:clamp(18px,5vw,20px);
   }
 }
+
+/* Nur das Schriftlogo im Header um 30 Prozent vergrößern. */
+.header > .brand { font-size:31.2px; }
+@media(max-width:600px){
+  .header > .brand { font-size:28.6px; }
+}
