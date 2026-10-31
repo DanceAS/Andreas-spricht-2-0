@@ -50,3 +50,20 @@
 @media(max-width:600px){
   #ueber-mich .about-copy > p:not(.eyebrow):not(.about-lead) { font-size:18px; }
 }
+
+/* Ausschließlich die Original-Buchkarte unter Im Studio. */
+#studio-books .studio-cover {
+  aspect-ratio:auto;
+  border:0;
+  background:transparent;
+}
+#studio-books .studio-cover::before { display:none; }
+#studio-books .studio-cover img {
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+#studio-books .studio-book > div:last-child { min-width:0; }
+#studio-books .studio-book p { font-size:14px; }
+#studio-books .studio-book .book-link { display:inline-block; text-underline-offset:3px; }
