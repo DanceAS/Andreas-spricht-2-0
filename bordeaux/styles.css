@@ -148,3 +148,12 @@
 }
 .footer .footer-facebook::before { content:""; position:absolute; inset:-6px; }
 .footer .footer-facebook svg { display:block; }
+
+/* Ausschließlich die Typografie im Hörbuchbereich vereinheitlichen. */
+#hoerbuecher .eyebrow { font-size:11px; }
+#hoerbuecher .column-description { font-size:14px; }
+#hoerbuecher .book p { font-size:16px; }
+#hoerbuecher .book-link { font-size:14px; }
+@media(max-width:600px){
+  #hoerbuecher .eyebrow { font-size:9px; }
+}
