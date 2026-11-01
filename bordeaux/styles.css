@@ -176,3 +176,42 @@
   align-items:center;
   min-height:32px;
 }
+
+/* Nur Smartphones: eine Menüzeile und das Porträt bereits im ersten Bildschirm. */
+@media(max-width:600px){
+  .header {
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:auto 44px;
+    align-content:center;
+    row-gap:6px;
+    height:128px;
+  }
+  .header > .brand { justify-self:start; }
+  .header nav {
+    width:100%;
+    max-width:none;
+    flex-wrap:nowrap;
+    justify-content:space-between;
+    gap:clamp(8px,2.4vw,14px);
+    font-size:12px;
+  }
+  .header nav > a {
+    display:inline-flex;
+    align-items:center;
+    white-space:nowrap;
+    min-height:44px;
+  }
+  .header .nav-contact { padding:6px 10px; }
+  #start {
+    padding-top:20px;
+    row-gap:24px;
+  }
+  #start > .hero-visual {
+    grid-row:1;
+    height:340px;
+  }
+  #start > .hero-copy { grid-row:2; }
+  #start > .hero-bottom { grid-row:3; }
+  #start h1 { font-size:clamp(56px,17.9vw,70px); }
+}
