@@ -252,3 +252,15 @@
 @media(max-width:600px){
   #hoerbuecher .column-description { font-size:18px; font-weight:600; }
 }
+
+/* Nur mobile Abschnittsübergänge; die inneren Inhaltsabstände bleiben erhalten.
+   Hörproben → Über mich: 148px → ca.125.8px (−15%).
+   Über mich → Hörbücher: 75px → 63.75px (−15%).
+   Kontakt → Footer: 90px → 72px (−20%). */
+@media(max-width:600px){
+  #ueber-mich {
+    padding-top:42.8px;
+    padding-bottom:53.75px;
+  }
+  #kontakt { padding-bottom:42px; }
+}
