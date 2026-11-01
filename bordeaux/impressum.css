@@ -1,0 +1,30 @@
+/* Eigenständige Impressumsseite; keine Regeln für den One-Pager. */
+.legal-content {
+  width:min(860px,88%);
+  margin:0 auto;
+  padding:72px 0 80px;
+  font-size:18px;
+  line-height:1.7;
+}
+.legal-content h1 {
+  font-size:clamp(48px,6vw,76px);
+  margin:0 0 40px;
+}
+.legal-content address { font-style:normal; margin-bottom:40px; }
+.legal-content section { margin:0 0 36px; }
+.legal-content h2 {
+  font-size:clamp(23px,3vw,32px);
+  line-height:1.3;
+  letter-spacing:-.4px;
+  margin:0 0 16px;
+  overflow-wrap:anywhere;
+  hyphens:auto;
+}
+.legal-content p { margin:0 0 24px; }
+.legal-content a { text-decoration:underline; text-underline-offset:4px; overflow-wrap:anywhere; }
+.legal-content a:hover { color:#925568; }
+@media(max-width:600px){
+  .legal-content { padding:42px 0 48px; font-size:17px; line-height:1.65; }
+  .legal-content h1 { margin-bottom:30px; }
+  .legal-content address { margin-bottom:32px; }
+}
