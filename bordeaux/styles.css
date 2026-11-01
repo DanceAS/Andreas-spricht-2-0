@@ -254,12 +254,14 @@
 }
 
 /* Nur mobile Abschnittsübergänge; die inneren Inhaltsabstände bleiben erhalten.
-   Hörproben → Über mich: 148px → ca.125.8px (−15%).
+   Hörproben → Über mich: ca.125.8px → 75.48px (erneut −40%).
+   Diesen Übergang nur oberhalb von Über mich steuern, ohne doppeltes Sektionspadding.
    Über mich → Hörbücher: 75px → 63.75px (−15%).
    Kontakt → Footer: 90px → 72px (−20%). */
 @media(max-width:600px){
+  #hoerproben { padding-bottom:0; }
   #ueber-mich {
-    padding-top:42.8px;
+    padding-top:52.48px;
     padding-bottom:53.75px;
   }
   #kontakt { padding-bottom:42px; }
