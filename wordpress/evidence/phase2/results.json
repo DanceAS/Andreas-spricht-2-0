@@ -1,0 +1,353 @@
+{
+  "reviewDateEuropeBerlin": "2026-11-02",
+  "referenceCommit": "bfc8f3022a65a4b294921bb20d85573ee6aba92f",
+  "browser": "Chromium 154.0.8037.57 on Linux (viewport testing, not Safari)",
+  "runtime": {
+    "wordpress": "6.8.3",
+    "parent": "1.3",
+    "php": "8.3.28",
+    "blocks": {
+      "home": 110,
+      "impressum": 23,
+      "datenschutz": 101
+    },
+    "assets": 7,
+    "active_plugins": 0,
+    "original_media_unchanged": true,
+    "parent_unchanged": true,
+    "local_only": true
+  },
+  "editor": {
+    "pages": {
+      "home": {
+        "validBefore": 110,
+        "validAfterReload": 110,
+        "restored": true
+      },
+      "impressum": {
+        "validBefore": 23,
+        "validAfterReload": 23,
+        "restored": true
+      },
+      "datenschutz": {
+        "validBefore": 101,
+        "validAfterReload": 101,
+        "restored": true
+      }
+    },
+    "homeChecks": [
+      "text-heading-genre-about-author-status-description-contact-footer",
+      "hero-and-book-cover-replaced-via-media",
+      "mp3-replaced-via-core-audio-and-plays",
+      "navigation-book-cta-link-text-and-url"
+    ],
+    "restored": true
+  },
+  "additionalEditorTypes": {
+    "socialLink": {
+      "urlLabelSaveFrontendReloadAndRestore": true
+    },
+    "listItem": {
+      "saveFrontendReloadAndRestore": true
+    }
+  },
+  "finalNativeBlockValidation": [
+    {
+      "id": 65,
+      "total": 110,
+      "invalid": []
+    },
+    {
+      "id": 66,
+      "total": 23,
+      "invalid": []
+    },
+    {
+      "id": 67,
+      "total": 101,
+      "invalid": []
+    }
+  ],
+  "idempotence": {
+    "allThreePagesPreserved": true,
+    "sha256": {
+      "home": "c1f8d35bb6778fac1325c9344cafb40b84795bec2f6af9d305ad8b9c6f704eaf",
+      "impressum": "b4bd8a628e8aa3c99562ebe0163d1526a1f9804764266a968419e4b03e486703",
+      "datenschutz": "4a273f387cb726cc505a335b4f638c608433ca513327f3f98f7e503664ab6a65"
+    }
+  },
+  "responsive": [
+    {
+      "width": 320,
+      "maxMeasuredGeometryDeltaPx": 0.09375,
+      "comparisonDifferencesAboveTolerance": [],
+      "horizontalOverflowPx": 0,
+      "extraBelowFooterPx": -0.484375,
+      "imageFitAndPositionMatch": true,
+      "onepagerWordingUnchanged": true,
+      "allThreeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=66",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "mainHeight": 780.140625,
+          "referenceHeight": 780.140625
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=67",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "mainHeight": 19348.609375,
+          "referenceHeight": 19348.609375
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 375,
+      "maxMeasuredGeometryDeltaPx": 0.09375,
+      "comparisonDifferencesAboveTolerance": [],
+      "horizontalOverflowPx": 0,
+      "extraBelowFooterPx": 0.0625,
+      "imageFitAndPositionMatch": true,
+      "onepagerWordingUnchanged": true,
+      "allThreeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=66",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "mainHeight": 780.140625,
+          "referenceHeight": 780.140625
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=67",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "mainHeight": 16562.78125,
+          "referenceHeight": 16562.78125
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 390,
+      "maxMeasuredGeometryDeltaPx": 0.09375,
+      "comparisonDifferencesAboveTolerance": [],
+      "horizontalOverflowPx": 0,
+      "extraBelowFooterPx": 0.40625,
+      "imageFitAndPositionMatch": true,
+      "onepagerWordingUnchanged": true,
+      "allThreeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=66",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "mainHeight": 752.09375,
+          "referenceHeight": 752.09375
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=67",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "mainHeight": 16029.890625,
+          "referenceHeight": 16029.890625
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 430,
+      "maxMeasuredGeometryDeltaPx": 0.09375,
+      "comparisonDifferencesAboveTolerance": [],
+      "horizontalOverflowPx": 0,
+      "extraBelowFooterPx": 0.109375,
+      "imageFitAndPositionMatch": true,
+      "onepagerWordingUnchanged": true,
+      "allThreeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=66",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "mainHeight": 752.09375,
+          "referenceHeight": 752.09375
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=67",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "mainHeight": 14737.71875,
+          "referenceHeight": 14737.71875
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 820,
+      "maxMeasuredGeometryDeltaPx": 0.015625,
+      "comparisonDifferencesAboveTolerance": [],
+      "horizontalOverflowPx": 0,
+      "extraBelowFooterPx": 0.125,
+      "imageFitAndPositionMatch": true,
+      "onepagerWordingUnchanged": true,
+      "allThreeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=66",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "mainHeight": 805.03125,
+          "referenceHeight": 805.03125
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=67",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "mainHeight": 10347.328125,
+          "referenceHeight": 10347.328125
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 1024,
+      "maxMeasuredGeometryDeltaPx": 0.0,
+      "comparisonDifferencesAboveTolerance": [],
+      "horizontalOverflowPx": 0,
+      "extraBelowFooterPx": -0.078125,
+      "imageFitAndPositionMatch": true,
+      "onepagerWordingUnchanged": true,
+      "allThreeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=66",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "mainHeight": 833.671875,
+          "referenceHeight": 833.671875
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=67",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "mainHeight": 9196.921875,
+          "referenceHeight": 9196.921875
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 1366,
+      "maxMeasuredGeometryDeltaPx": 0.0,
+      "comparisonDifferencesAboveTolerance": [],
+      "horizontalOverflowPx": 0,
+      "extraBelowFooterPx": 0.0625,
+      "imageFitAndPositionMatch": true,
+      "onepagerWordingUnchanged": true,
+      "allThreeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=66",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "mainHeight": 852.15625,
+          "referenceHeight": 852.15625
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=67",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "mainHeight": 9218.75,
+          "referenceHeight": 9218.75
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 1440,
+      "maxMeasuredGeometryDeltaPx": 0.0,
+      "comparisonDifferencesAboveTolerance": [],
+      "horizontalOverflowPx": 0,
+      "extraBelowFooterPx": 0.390625,
+      "imageFitAndPositionMatch": true,
+      "onepagerWordingUnchanged": true,
+      "allThreeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=66",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "mainHeight": 852.15625,
+          "referenceHeight": 852.15625
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=67",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "mainHeight": 9218.75,
+          "referenceHeight": 9218.75
+        }
+      ],
+      "jsErrors": []
+    }
+  ],
+  "codeSHA256": {
+    "wordpress/compose.yml": "2e8f77d1dc6b633de4f520b1396e8fce58a46df16f2e2e63de3d9bfd35bfe096",
+    "wordpress/content/datenschutz.html": "7be26cc989e314003e6df512083f1409216e44147d884544503d3c2acbde0708",
+    "wordpress/content/hero.html": "d8f57793ea9b7a44304c7ff439dc550a0ed0ea7f57afe4bd0c5f562130562d5a",
+    "wordpress/content/home.html": "c6a0f48ecd2406d61f9a5fe7278266ff10d23c2f56e42a4c8141cf2c78028918",
+    "wordpress/content/impressum.html": "04b86ac98f35237348826c6db22773e5577ca51bd52f8f47d4507ce233e6f377",
+    "wordpress/content/seed-phase2.php": "5219761f01d7de880218230b6f1307b2e8afe7a6f6d758b7ce768b6b1b859d0b",
+    "wordpress/content/seed.php": "aa24a1e03f59c0fc560ba6b00f23c1833d59a46c5bbdb6e190ef886bb978fb7a",
+    "wordpress/content/verify-phase2.php": "81dd05288ab2ace3b28935d68a68104fb530a34bb2392aa70b0614fce88085df",
+    "wordpress/content/verify.php": "2b367103f041379e686f2e18df60e21061305dd87b41a0aec9f7d69958a290a6",
+    "wordpress/setup.sh": "d1601de6e2165cf989cd69a68591baa6cf52a831a2ca714e7160f5a181a23d6f",
+    "wordpress/tests/editor-phase2.cjs": "0924ced707814550014ed855d058f6c569879283ef3d5de5b006ecf4aec68bc5",
+    "wordpress/tests/editor-social-list.cjs": "3e9888ddf549ad81aa2d255bf2fc82262a1c7154cc9e20a938ea7258c57afad5",
+    "wordpress/tests/editor.cjs": "63e67b358e79fd635829325d218461a4e455381da194a921e6338a1a7b3d201d",
+    "wordpress/tests/responsive.cjs": "f1539ad2bf950234b6a474f5f71b9f76350dfd198e018a5ff6fbf1910f765c3c",
+    "wordpress/tests/site.cjs": "0c60d6996eb136e50de33b6633d980d802ceb90d27a6487ad07b88befa62a7f8",
+    "wordpress/theme/andreas-spricht-bordeaux/blocks.css": "955c6a933f78db8642645f4bc613defbc514bb28f57afd3f7670407ea09573a6",
+    "wordpress/theme/andreas-spricht-bordeaux/facebook.svg": "fbaf801b913da49204fb75c731102fe8182851398420ab298897b13448c6cc52",
+    "wordpress/theme/andreas-spricht-bordeaux/fit-sample-intro.js": "828062fa2716eba55b3de19cad904bd2043077bc64a16e40b9ccd25b23fa6322",
+    "wordpress/theme/andreas-spricht-bordeaux/functions.php": "5320c8f14b9c6434dcdcf529a0ccdba4a3cd6003c0ad80e9fdaa24e41f72e66a",
+    "wordpress/theme/andreas-spricht-bordeaux/mobile-about-portrait.js": "d7f840827a72632e10234f31d110ca08c536d630133e314c89d4295bce30e60c",
+    "wordpress/theme/andreas-spricht-bordeaux/player.js": "e6761a7a994dc7795ccfe7795cef347a0e3e47f88e99d58671dadd07813ec994",
+    "wordpress/theme/andreas-spricht-bordeaux/prototype.css": "5b40cf010d89408a175192bc3d0af9b91153964816b4ac185096280e674f3707",
+    "wordpress/theme/andreas-spricht-bordeaux/reference.css": "05db76d0ccda147951303f251f77a50ec113e10c71760c4eb05a40769802d463",
+    "wordpress/theme/andreas-spricht-bordeaux/style.css": "7b4fabc9b04ac27d26a52b9dace6d9d83c4b1e662158fc21ded37e987749fc85",
+    "wordpress/theme/andreas-spricht-bordeaux/templates/front-page.html": "26f34a59573ab4bc9d858c5898b8eeddd0041b548f31a5615ab6266d7eab3625",
+    "wordpress/theme/andreas-spricht-bordeaux/templates/index.html": "26f34a59573ab4bc9d858c5898b8eeddd0041b548f31a5615ab6266d7eab3625",
+    "wordpress/theme/andreas-spricht-bordeaux/templates/page.html": "26f34a59573ab4bc9d858c5898b8eeddd0041b548f31a5615ab6266d7eab3625",
+    "wordpress/theme/andreas-spricht-bordeaux/theme.json": "f5e6b1470aaef7fd848ba08923eb28c6bd5366d37610ee9432750c41e7e3a960",
+    "wordpress/tools/build-content.py": "9d69f14eeb6190ddf250b3f34dfe127fb73cfb499c1301a740ca8f5657b64708",
+    "wordpress/uploads.ini": "beb5611ac753f8e05da0e9186e69c64e03a04c3d8ed0b13671b3982688e3ca4a"
+  }
+}

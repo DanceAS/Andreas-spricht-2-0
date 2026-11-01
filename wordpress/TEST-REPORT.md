@@ -1,52 +1,98 @@
-# Phase-1-Prüfbericht zu Issue #8
+# Prüfbericht – WordPress Phase 2 / Issue #10
 
-Datum: 2026-11-01. Referenz-main: `26979db128d6f791fe3666f0a342f3c4632764f0`.
+Stand: **2. November 2026 (Europe/Berlin)**. Referenz-main: `bfc8f3022a65a4b294921bb20d85573ee6aba92f`.
 
-## Nachgewiesen
+## Vereinbart
 
-| Prüfung | Tatsächlich geprüftes Ergebnis |
+Vollständige aktuelle Bordeaux-Website als isolierte WordPress-Version auf unverändertem Twenty Twenty-Five; sämtliche redaktionellen Inhalte ohne Code im Gutenberg-Editor bearbeitbar. Tatsächliche Editoränderungen, Speichern, Frontend-/Reload-Nachweis und Wiederherstellung; responsive und funktionale Browserprüfung. Nur Branch und PR. Keine Veröffentlichung oder Hosting-/Domainänderung.
+
+AGENTS.md, gemergter Phase-1-Stand, dessen Anleitung/Prüfbericht und tatsächliche statische HTML-/CSS-/JS-Dateien einschließlich rechtlicher Seiten wurden vor der Umsetzung geprüft. Die bisherigen Phase-1-Dokumente sind als historische Berichte erhalten.
+
+## Umgesetzt
+
+Alle sichtbaren Bereiche: Header/Navigation, Hero, drei Hörproben, Über mich, Bücher, Kontakt/CTA, Footer/Facebook, dazu eigene Impressums- und Datenschutzseiten. Der frühere unbenutzte geschlossene Platzhalterdialog und der veraltete statische Noscript-Hinweis „Audiodateien sind noch nicht hinterlegt“ wurden nicht als aktive Inhalte übernommen.
+
+Die neue Startseite enthält 110 native Blöcke, Impressum 23 und Datenschutz 101. Keine `core/html`-Blöcke, keine eigenen Blocktypen und keine aktiven Zusatzplugins. Texte, Linkziele und Medienzuordnungen liegen in WordPress-Seiteninhalt/Mediathek, nicht im Laufzeit-JavaScript oder in PHP-Templates. Die wenigen JS-/PHP-Ergänzungen betreffen Playerbedienung, bestehende responsive Layoutfunktionen und Darstellungsanpassungen für native Wrapper.
+
+Vier wichtige Umsetzungsdetails wurden praktisch berücksichtigt:
+
+- Native Audio-Blöcke behalten ihre editierbare Medienzuordnung. Der angepasste Player liest die tatsächlichen Audioelemente und die zugehörige Überschrift; er enthält keine fest codierten Hörprobentitel oder Datei-URLs.
+- Die beim Link-Editieren möglicherweise entfernten Inline-Klassen sind keine Voraussetzung der Gestaltung mehr. Stabile Blockklassen erhalten CTA-/Amazon-Link-Stile auch nach normalen Editoränderungen.
+- Editor-Styles verwenden Alias-Klassen für gespeicherte Anker-IDs: Gutenberg setzt an deren Stelle eigene Client-IDs. Der Frontend-CSS-Stand bleibt die Referenzkopie.
+- WordPress-Blocktemplates rufen `wptexturize` auch direkt auf. Der Filter `run_wptexturize` deaktiviert die automatische Interpunktionsänderung im Child-Theme. Dadurch bleibt beispielsweise der originale Bindestrich in „ALL-INKL.COM - Neue Medien Münnich“ erhalten. Keine manuelle rechtliche Umformulierung.
+
+## Technisch überprüft: echter Editor
+
+Playwright bediente den tatsächlich laufenden visuellen WordPress-Editor. Die Inhaltsänderungen erfolgen über sichtbare RichText-Felder, Linkdialoge, Mediathek und native Blockeinstellungen. `wp.data` dient nur dem Lesen von Lade-/Speicherstatus und Blockgültigkeit; keine REST-/SQL-Schreibzugriffe ersetzen die Editor-Nachweise.
+
+| Inhaltstyp | Tatsächlicher Nachweis |
 | --- | --- |
-| Isolierte Installation | Eigener Compose-Projektname, Datenbank und WordPress-Volume; HTTP ausschließlich an 127.0.0.1:8890 gebunden |
-| WordPress/Parent | WordPress 6.8.3, Twenty Twenty-Five 1.3, PHP 8.3.28 (Web-/Prüfcontainer); MariaDB-Image 11.4.13 |
-| Parent unverändert | Alle Parent-Dateihashes stimmen mit dem unveränderten Parent im offiziellen, fixierten WordPress-Image überein |
-| Plugins | Null aktive Zusatzplugins; keine zusätzlichen Blocktypen oder Pagebuilder |
-| Native Inhalte | 13 rekursiv geprüfte `core/*`-Blöcke, kein `core/html`; Gutenberg erkennt alle Blöcke vor und nach Speichern als gültig |
-| Text über Editor geändert | Sprecherzeile per sichtbarem Rich-Text-Feld um „– EDITORTEST“ ergänzt, über Save gespeichert |
-| Bild über Editor geändert | Bildblock ausgewählt; Replace → Open Media Library → Media Library; vorhandenes zweites Porträt gewählt und gespeichert |
-| Speichereffekt | Geänderter Text und Bild-URL danach im Frontend nachgewiesen, Bild dekodiert; nach Editor-Neuladen ebenfalls vorhanden |
-| Wiederherstellung | Ursprüngliche Sprecherzeile und ursprüngliches Hero-Porträt über dieselbe Editor-Oberfläche wiederhergestellt und gespeichert |
-| Bild im Editor | Nach Reload deckt das Bild die komplette Bogenhöhe ab, einschließlich Gutenberg-Wrapper |
-| Originalmedien | In WordPress aufbewahrte Original-JPGs stimmen bytegleich mit den Referenzdateien überein; normale WordPress-Bildvarianten zusätzlich vorhanden |
-| Responsivität | Vergleich mit echter lokaler statischer Referenz bei 320, 375, 390, 430, 820, 1024, 1366 und 1440 px |
-| Gemessene Designkonsistenz | Bei Überschrift, Einleitung, Sprecherzeile, Bildcontainer, Bild und Slogan: relative x/y/width/height in allen acht Fällen identisch (maximale gemessene Differenz 0 px). Ausgewählte wirksame Schriftwerte/Farben, Bogenradius, object-fit und object-position stimmen überein |
-| Kein horizontaler Überlauf | In allen acht anonymen WordPress-Frontend-Viewports 0 px |
-| Seed nicht destruktiv | Erneuter setup.sh-Aufruf erhält den SHA-256 des gespeicherten Seiteninhalts unverändert |
-| Indexierung | Lokales Frontend liefert `<meta name='robots' content='noindex, nofollow' />` |
-| Syntax/Konfiguration | PHP-Lint für Theme/Seed/Verifikation, Bash-Syntax, Node-Syntax, Compose-Konfiguration und git diff --check erfolgreich |
-| Statische Referenz | Keine Änderungen an Bordeaux, grüner Variante, gemeinsamen Frontend-Dateien oder Deployment-Workflows |
+| Absatz/Überschrift | Sprecherzeile, Hörprobentitel, Genre/Autor, Über-mich-Einleitung und Buchtitel geändert und gespeichert |
+| Bilder | Hero-Porträt und Buchcover über Replace → Mediathek ausgetauscht |
+| MP3/Zuordnung | Erste Hörprobe im nativen Audio-Block durch die dritte MP3 ersetzt; im Frontend auch tatsächlich abgespielt |
+| Bücher | Titel, Autor und bisher leere Status-/Beschreibungsabsätze geändert; ausgefüllte Zusatzfelder im Frontend sichtbar |
+| Links/CTA/Navigation | Beschriftung und URL eines Navigationslinks, Amazon-Links und Kontakt-CTA über den Linkdialog geändert |
+| Kontakt/Footer | Kontaktabsatz und Copyright-Absatz geändert |
+| Facebook | URL und zugängliche Beschriftung im nativen Social-Link-Block geändert |
+| Impressum/Datenschutz | Je ein rechtlicher Absatz geändert; auf beiden Seiten Speichern und Editor-Neuladen geprüft |
+| Liste | Datenschutz-Listeneintrag im inneren RichText-Feld geändert |
 
-Der echte visuelle Editor wurde mit Playwright bedient. `wp.data` wird im Test ausschließlich zum Lesen des Lade-/Speicherzustands und der Blockgültigkeit verwendet. Die nachgewiesenen Text- und Bildänderungen erfolgen über sichtbare Editorfelder und Medienauswahl, nicht per REST-/SQL-Schreibzugriff oder als Dateiänderung. Die erste Erstellung des Startinhalts erfolgt separat über das dokumentierte lokale Seed-Skript.
+Für alle genannten Fälle wurden die Änderungen **nach Speichern im Frontend und nach erneutem Öffnen des Editors bestätigt**. Anschließend wurden die Originalwerte über denselben Editor wiederhergestellt. Vorher/nachher und nach dem letzten Listentest erkennt Gutenberg weiterhin **110/23/101 gültige native Blöcke**, ohne ungültige Blöcke.
 
-## Bildnachweise
+Originale Phase-2-Mediendateien: vier JPGs und drei MP3s sind bytegleich mit der Referenz. Parent-Dateien stimmen per Hash mit Twenty Twenty-Five im fixierten offiziellen WordPress-Image überein. Der erneute Setup-Aufruf erhält die SHA-256-Werte der drei gespeicherten Seiten unverändert.
 
-Die Teständerungen in den folgenden zwei Bildern existierten nur lokal und wurden anschließend zurückgesetzt:
+## Technisch überprüft: Frontend und Referenz
 
-- [Editor nach Speichern und erneutem Öffnen: geänderte Sprecherzeile und zweites Porträt](evidence/editor-persisted.png)
-- [Frontend mit denselben gespeicherten Teständerungen](evidence/edited-frontend.png)
-- [Wiederhergestellter Hero bei 390 px](evidence/hero-mobile.png)
-- [Wiederhergestellter Hero bei 1440 px](evidence/hero-desktop.png)
+Linux **Chromium 154.0.8037.57**, anonyme Browserkontexte bei allen geforderten Breiten. Kein echter iOS-Browser.
 
-[Kompakter JSON-Nachweis mit Codehashes](evidence/results.json). Weitere Rohdaten und Referenz-Screenshots erzeugt der lokale Test in `work/issue-8/`. Screenshots des Heroes sind Ausschnitte dieser Sektion; der fehlende Header ist Bestandteil der ausdrücklich begrenzten Phase 1.
+37 repräsentative Elemente wurden relativ zum Dokument vermessen, darunter Header/Logo/Navigation, Hero-Texte/Bild/Slogan, Hörproben/Player, Über-mich-Bild/Text, Bücher/Cover/Link und Kontakt/Footer. Verglichen wurden x/y/width/height sowie wirksame Schriftgröße, Schriftstärke, Zeilenhöhe, Farbe, Schriftfamilie und Laufweite. Bildfüllung und Bildposition wurden zusätzlich aus den erfassten Browserwerten abgeglichen.
 
-## Grenzen und offene Nachweise
+| Breite | Größte gemessene Geometriedifferenz | Horizontaler Überlauf | Funktionsprüfungen |
+| --- | ---: | ---: | --- |
+| 320 px | 0,094 px | 0 px | bestanden |
+| 375 px | 0,094 px | 0 px | bestanden |
+| 390 px | 0,094 px | 0 px | bestanden |
+| 430 px | 0,094 px | 0 px | bestanden |
+| 820 px | 0,016 px | 0 px | bestanden |
+| 1024 px | 0 px | 0 px | bestanden |
+| 1366 px | 0 px | 0 px | bestanden |
+| 1440 px | 0 px | 0 px | bestanden |
 
-- Kein echter iPhone-/iPad-/Safari- oder WebKit-Test. Desktop-Chromium mit verschiedenen Viewports ersetzt diese Geräte nicht.
-- Der geometrische Vergleich betrifft die genannten sechs Elemente. Kein pixelweiser Vergleich der gesamten Website; native Button- und Abschlusslink-Markups sind ein Phase-1-Prototyp, kein Nachweis vollständiger Deckung aller Details.
-- Keine übrigen Abschnitte, Hörproben, Bücher, Navigation, Footer oder rechtlichen WordPress-Seiten migriert. Die beiden Hero-Anker zeigen noch auf einen in WordPress nicht umgesetzten Abschnitt.
-- Mediathekwechsel und Speichern getestet; Upload eines weiteren eigenen Bildes und eingeschränkte Redakteursrolle noch nicht getestet. Das lokale Uploadlimit wurde auf 32 MB gesetzt.
-- Der Editor läuft in der englischen Sprache der fixierten Testinstallation. Website-Inhalte sind deutsch; deutsche Backend-Sprachpakete sind offen.
-- Festgehaltene Versionen dienen der reproduzierbaren lokalen Basis. Produktionsaktualität, Hosting-Sicherheit, SEO, Cookie-/Datenschutzkonfiguration und vollständige Barrierefreiheit sind nicht abgenommen.
-- WordPress-Updateabfragen können im abgeschotteten lokalen Betrieb Warnungen zur nicht erreichbaren WordPress.org-Verbindung melden. Externe WP-HTTP-Aufrufe sind bewusst blockiert; es wird keine unsichere TLS-Konfiguration verwendet.
-- Keine Aussage über die unberührte ALL-INKL-Installation, keine Remote-/Domain-/SSL-/DNS-Prüfung. Keine Veröffentlichung und kein Merge.
+Die Subpixelwerte sind Rundungsdifferenzen, kein behaupteter pixelweiser Gesamtbildvergleich. Kein Vergleich überschreitet die 1,1-px-Prüftoleranz; die verglichenen typografischen Werte stimmen überein. Am Footer endet das Dokument innerhalb von weniger als 0,5 px Rundungsdifferenz, ohne zusätzlichen großen Leerraum.
 
-Die vereinbarte Phase-1-Bearbeitbarkeit des Hero-Prototyps ist implementiert und praktisch nachgewiesen. Die komplette WordPress-Umsetzung ist weiterhin offen. Nächste Schritte und nötige Folgeentscheidungen stehen in [README.md](README.md).
+In jedem der acht Fälle außerdem erfolgreich:
+
+- Originaltexte der geprüften Onepager-Bereiche stimmen nach Whitespace-Normalisierung überein.
+- **Vollständiger** Impressums-/Datenschutz-Wortlaut stimmt nach Whitespace-Normalisierung überein; die Höhe des jeweiligen rechtlichen Hauptbereichs stimmt ebenfalls mit der Referenz überein. Weiche Trennzeichen und Interpunktion werden nicht aus dem Vergleich entfernt.
+- Alle drei Audios ohne Autoplay, jeweils Play/Pause und Positionswechsel auf 50 % mit tatsächlich fortschreitender Wiedergabe und erfolgreichem Seek.
+- Vier Header-Anker, rechtliche Links und jeweilige Rücknavigation funktionieren. Footer-Kontakt ist `mailto:kontakt@andreasspricht.de`; Facebook hat die vorgegebene URL, zugängliche Beschriftung und neuen Tab.
+- Alle Bilder dekodierbar, keine JavaScript-Laufzeitfehler, kein horizontaler Überlauf auch auf den rechtlichen Seiten.
+
+PHP-/Bash-/Node-Syntax, Compose-Konfiguration und `git diff --check` sind erfolgreich. Die lokale Seite bleibt `noindex`; die geprüfte Basis bleibt WordPress 6.8.3 / Twenty Twenty-Five 1.3 / Web-PHP 8.3.28 / MariaDB 11.4.13, keine Produktionsversions-Empfehlung.
+
+## Screenshots und Daten
+
+Die „EDITORTEST“-Änderungen in den Editor-/Testbildern waren ausschließlich lokal und wurden danach zurückgesetzt.
+
+- [Vollständige wiederhergestellte Startseite – Smartphone](evidence/phase2/home-mobile.png)
+- [Vollständige wiederhergestellte Startseite – Desktop](evidence/phase2/home-desktop.png)
+- [Gespeicherte Teständerungen im Frontend](evidence/phase2/edited-home.png)
+- [Buchangaben nach erneutem Öffnen des Editors](evidence/phase2/editor-book-persisted.png)
+- [Impressumsänderung nach Editor-Neuladen](evidence/phase2/editor-impressum-persisted.png)
+- [Facebook-Beschriftung nach Editor-Neuladen](evidence/phase2/editor-facebook-persisted.png)
+- [Listeneintrag nach Editor-Neuladen](evidence/phase2/editor-list-persisted.png)
+- [Wiederhergestelltes Impressum](evidence/phase2/impressum.png)
+- [Ausschnitt der wiederhergestellten Datenschutzerklärung](evidence/phase2/datenschutz-excerpt.png)
+- [Maschinenlesbare Nachweise, Codehashes und Wiederholbarkeitsprüfung](evidence/phase2/results.json)
+
+Installation, Bedienung, Testbefehle und Deployment-Mindestvoraussetzungen: [README.md](README.md).
+
+## Offen und ausdrücklich nicht nachgewiesen
+
+- **WebKit/Safari/iPhone/iPad:** offizieller Playwright-WebKit-Download scheiterte an der Umgebungs-Netzwerkfreigabe mit HTTP 403 „Domain forbidden“. Keine Umgehung. Viewporttests ersetzen keine echten Safari-/Gerätetests; auch Issue #6 wird dadurch nicht als geräteübergreifend gelöst erklärt.
+- **Hosting:** keinerlei Zugriff auf bestehende ALL-INKL-Installation oder Live-Seite, keine Aussage über deren Versionen, Datenbank, Plugins oder Sicherheit. Eigene Hosting-/Editor-Abnahme vor jeder Veröffentlichung bleibt zwingend.
+- **Redaktion:** mit lokalem Administratorkonto getestet. Eingeschränkte Redakteursrolle und Upload eines zusätzlichen eigenen Mediums noch nicht praktisch geprüft; Austausch vorhandener Mediathek-Dateien ist geprüft. Seitenweiter Header/Footer-Abgleich ist manuell, keine globale Synchronisierung.
+- **Editor-Vorschau:** dynamische mobile Porträtumpositionierung und Textanpassung laufen im Frontend. Die Editor-Listenansicht behält die gespeicherte Reihenfolge; neue Bildmotive müssen im Frontend geprüft werden. Kein visueller Focal-Point-Regler implementiert.
+- **Produktion:** aktuelle unterstützte Versionen, HTTPS/Byte-Range/Uploadrechte, fachliche Datenschutzprüfung für WordPress, SEO-Metadaten, vollständige Accessibility- und Geräteabnahme stehen vor einem möglichen Deployment aus. Die vorhandenen Rechtstexte wurden nur unverändert migriert, nicht fachlich neu freigegeben.
+
+**Keine Änderungen an statischer Bordeaux-/grüner Variante, bestehenden Workflows, Live-Website, WordPress bei ALL-INKL, DNS, Domain, SSL oder Wix. Kein Merge und keine Veröffentlichung.**

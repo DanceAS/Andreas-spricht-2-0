@@ -17,8 +17,8 @@ find theme content -type f -exec chmod 644 {} +
 chmod 644 uploads.ini
 mkdir -p .local-assets
 chmod 755 .local-assets
-cp ../bordeaux/assets/andreas-scharrer-original.jpg ../bordeaux/assets/andreas-scharrer-8.jpg .local-assets/
-chmod 644 .local-assets/*.jpg
+cp ../bordeaux/assets/*.jpg ../bordeaux/assets/*.mp3 .local-assets/
+chmod 644 .local-assets/*
 docker compose up -d --wait wordpress
 # Wait for the image entrypoint to copy WordPress and create wp-config.php.
 for attempt in {1..30}; do
@@ -31,6 +31,7 @@ docker compose run --rm -T cli sh -c '
     wp core install --url=http://127.0.0.1:8890 --title="Andreas spricht · lokaler Prototyp" --admin_user="$WP_ADMIN_USER" --admin_password="$WP_ADMIN_PASSWORD" --admin_email=prototype@example.invalid --skip-email
   fi
   wp eval-file /prototype/seed.php
+  wp eval-file /prototype/seed-phase2.php
 '
 echo 'Lokaler Prototyp: http://127.0.0.1:8890'
 echo 'Editor: http://127.0.0.1:8890/wp-admin/ — Zugangsdaten ausschließlich in wordpress/.env'

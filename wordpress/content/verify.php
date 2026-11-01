@@ -1,6 +1,7 @@
 <?php
 /** Read-only verification of the isolated prototype, not a migration tool. */
 require_once '/var/www/html/wp-load.php';
+if (get_option('as_phase2_pages')) { require '/prototype/verify-phase2.php'; return; }
 function as_check($condition, $message) {
     if (! $condition) { throw new RuntimeException($message); }
 }
