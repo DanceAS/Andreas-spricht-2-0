@@ -1,0 +1,992 @@
+{
+  "sourceCommit": "26979db128d6f791fe3666f0a342f3c4632764f0",
+  "engine": "chromium",
+  "browserVersion": "154.0.8037.57",
+  "environment": "Linux Chromium; mobile viewport/touch emulation, not iOS Safari",
+  "results": [
+    {
+      "prefix": "/",
+      "width": 320,
+      "audioPlayPauseSeek": true,
+      "navigation": true,
+      "errors": [],
+      "failed": [],
+      "measurements": [
+        {
+          "phase": "initial",
+          "viewport": {
+            "width": 320,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4621,
+          "extraBelowFooter": 0.421875,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4620.578125,
+          "bodyHeight": 4620.578125,
+          "footerBottom": 4620.578125,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "bottom-images-loaded",
+          "viewport": {
+            "width": 320,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4621,
+          "extraBelowFooter": 0.421875,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4620.578125,
+          "bodyHeight": 4620.578125,
+          "footerBottom": 4620.578125,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-navigation-audio",
+          "viewport": {
+            "width": 320,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4621,
+          "extraBelowFooter": 0.421875,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4620.578125,
+          "bodyHeight": 4620.578125,
+          "footerBottom": 4620.578125,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-resize",
+          "viewport": {
+            "width": 320,
+            "height": 760,
+            "visualHeight": 760
+          },
+          "scrollHeight": 4621,
+          "extraBelowFooter": 0.421875,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4620.578125,
+          "bodyHeight": 4620.578125,
+          "footerBottom": 4620.578125,
+          "footerHeight": 160.90625
+        }
+      ]
+    },
+    {
+      "prefix": "/",
+      "width": 375,
+      "audioPlayPauseSeek": true,
+      "navigation": true,
+      "errors": [],
+      "failed": [],
+      "measurements": [
+        {
+          "phase": "initial",
+          "viewport": {
+            "width": 375,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4441,
+          "extraBelowFooter": -0.03125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4441.03125,
+          "bodyHeight": 4441.03125,
+          "footerBottom": 4441.03125,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "bottom-images-loaded",
+          "viewport": {
+            "width": 375,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4441,
+          "extraBelowFooter": -0.03125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4441.03125,
+          "bodyHeight": 4441.03125,
+          "footerBottom": 4441.03125,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-navigation-audio",
+          "viewport": {
+            "width": 375,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4441,
+          "extraBelowFooter": -0.03125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4441.03125,
+          "bodyHeight": 4441.03125,
+          "footerBottom": 4441.03125,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-resize",
+          "viewport": {
+            "width": 375,
+            "height": 760,
+            "visualHeight": 760
+          },
+          "scrollHeight": 4441,
+          "extraBelowFooter": -0.03125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4441.03125,
+          "bodyHeight": 4441.03125,
+          "footerBottom": 4441.03125,
+          "footerHeight": 160.90625
+        }
+      ]
+    },
+    {
+      "prefix": "/",
+      "width": 390,
+      "audioPlayPauseSeek": true,
+      "navigation": true,
+      "errors": [],
+      "failed": [],
+      "measurements": [
+        {
+          "phase": "initial",
+          "viewport": {
+            "width": 390,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4429,
+          "extraBelowFooter": 0.3125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4428.6875,
+          "bodyHeight": 4428.6875,
+          "footerBottom": 4428.6875,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "bottom-images-loaded",
+          "viewport": {
+            "width": 390,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4429,
+          "extraBelowFooter": 0.3125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4428.6875,
+          "bodyHeight": 4428.6875,
+          "footerBottom": 4428.6875,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-navigation-audio",
+          "viewport": {
+            "width": 390,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4429,
+          "extraBelowFooter": 0.3125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4428.6875,
+          "bodyHeight": 4428.6875,
+          "footerBottom": 4428.6875,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-resize",
+          "viewport": {
+            "width": 390,
+            "height": 760,
+            "visualHeight": 760
+          },
+          "scrollHeight": 4429,
+          "extraBelowFooter": 0.3125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4428.6875,
+          "bodyHeight": 4428.6875,
+          "footerBottom": 4428.6875,
+          "footerHeight": 160.90625
+        }
+      ]
+    },
+    {
+      "prefix": "/",
+      "width": 430,
+      "audioPlayPauseSeek": true,
+      "navigation": true,
+      "errors": [],
+      "failed": [],
+      "measurements": [
+        {
+          "phase": "initial",
+          "viewport": {
+            "width": 430,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4276,
+          "extraBelowFooter": 0.015625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4275.984375,
+          "bodyHeight": 4275.984375,
+          "footerBottom": 4275.984375,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "bottom-images-loaded",
+          "viewport": {
+            "width": 430,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4276,
+          "extraBelowFooter": 0.015625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4275.984375,
+          "bodyHeight": 4275.984375,
+          "footerBottom": 4275.984375,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-navigation-audio",
+          "viewport": {
+            "width": 430,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4276,
+          "extraBelowFooter": 0.015625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4275.984375,
+          "bodyHeight": 4275.984375,
+          "footerBottom": 4275.984375,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-resize",
+          "viewport": {
+            "width": 430,
+            "height": 760,
+            "visualHeight": 760
+          },
+          "scrollHeight": 4276,
+          "extraBelowFooter": 0.015625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4275.984375,
+          "bodyHeight": 4275.984375,
+          "footerBottom": 4275.984375,
+          "footerHeight": 160.90625
+        }
+      ]
+    },
+    {
+      "prefix": "/",
+      "width": 820,
+      "audioPlayPauseSeek": true,
+      "navigation": true,
+      "errors": [],
+      "failed": [],
+      "measurements": [
+        {
+          "phase": "initial",
+          "viewport": {
+            "width": 820,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 3582,
+          "extraBelowFooter": 0.109375,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3581.890625,
+          "bodyHeight": 3581.890625,
+          "footerBottom": 3581.890625,
+          "footerHeight": 116.90625
+        },
+        {
+          "phase": "bottom-images-loaded",
+          "viewport": {
+            "width": 820,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 3582,
+          "extraBelowFooter": 0.109375,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3581.890625,
+          "bodyHeight": 3581.890625,
+          "footerBottom": 3581.890625,
+          "footerHeight": 116.90625
+        },
+        {
+          "phase": "after-navigation-audio",
+          "viewport": {
+            "width": 820,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 3582,
+          "extraBelowFooter": 0.109375,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3581.890625,
+          "bodyHeight": 3581.890625,
+          "footerBottom": 3581.890625,
+          "footerHeight": 116.90625
+        },
+        {
+          "phase": "after-resize",
+          "viewport": {
+            "width": 820,
+            "height": 760,
+            "visualHeight": 760
+          },
+          "scrollHeight": 3582,
+          "extraBelowFooter": 0.109375,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3581.890625,
+          "bodyHeight": 3581.890625,
+          "footerBottom": 3581.890625,
+          "footerHeight": 116.90625
+        }
+      ]
+    },
+    {
+      "prefix": "/",
+      "width": 1440,
+      "audioPlayPauseSeek": true,
+      "navigation": true,
+      "errors": [],
+      "failed": [],
+      "measurements": [
+        {
+          "phase": "initial",
+          "viewport": {
+            "width": 1440,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 3578,
+          "extraBelowFooter": 0.390625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3577.609375,
+          "bodyHeight": 3577.609375,
+          "footerBottom": 3577.609375,
+          "footerHeight": 116.90625
+        },
+        {
+          "phase": "bottom-images-loaded",
+          "viewport": {
+            "width": 1440,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 3578,
+          "extraBelowFooter": 0.390625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3577.609375,
+          "bodyHeight": 3577.609375,
+          "footerBottom": 3577.609375,
+          "footerHeight": 116.90625
+        },
+        {
+          "phase": "after-navigation-audio",
+          "viewport": {
+            "width": 1440,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 3578,
+          "extraBelowFooter": 0.390625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3577.609375,
+          "bodyHeight": 3577.609375,
+          "footerBottom": 3577.609375,
+          "footerHeight": 116.90625
+        },
+        {
+          "phase": "after-resize",
+          "viewport": {
+            "width": 1440,
+            "height": 760,
+            "visualHeight": 760
+          },
+          "scrollHeight": 3578,
+          "extraBelowFooter": 0.390625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3577.609375,
+          "bodyHeight": 3577.609375,
+          "footerBottom": 3577.609375,
+          "footerHeight": 116.90625
+        }
+      ]
+    },
+    {
+      "prefix": "/bordeaux/",
+      "width": 320,
+      "audioPlayPauseSeek": true,
+      "navigation": true,
+      "errors": [],
+      "failed": [],
+      "measurements": [
+        {
+          "phase": "initial",
+          "viewport": {
+            "width": 320,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4621,
+          "extraBelowFooter": 0.421875,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4620.578125,
+          "bodyHeight": 4620.578125,
+          "footerBottom": 4620.578125,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "bottom-images-loaded",
+          "viewport": {
+            "width": 320,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4621,
+          "extraBelowFooter": 0.421875,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4620.578125,
+          "bodyHeight": 4620.578125,
+          "footerBottom": 4620.578125,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-navigation-audio",
+          "viewport": {
+            "width": 320,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4621,
+          "extraBelowFooter": 0.421875,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4620.578125,
+          "bodyHeight": 4620.578125,
+          "footerBottom": 4620.578125,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-resize",
+          "viewport": {
+            "width": 320,
+            "height": 760,
+            "visualHeight": 760
+          },
+          "scrollHeight": 4621,
+          "extraBelowFooter": 0.421875,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4620.578125,
+          "bodyHeight": 4620.578125,
+          "footerBottom": 4620.578125,
+          "footerHeight": 160.90625
+        }
+      ]
+    },
+    {
+      "prefix": "/bordeaux/",
+      "width": 375,
+      "audioPlayPauseSeek": true,
+      "navigation": true,
+      "errors": [],
+      "failed": [],
+      "measurements": [
+        {
+          "phase": "initial",
+          "viewport": {
+            "width": 375,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4441,
+          "extraBelowFooter": -0.03125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4441.03125,
+          "bodyHeight": 4441.03125,
+          "footerBottom": 4441.03125,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "bottom-images-loaded",
+          "viewport": {
+            "width": 375,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4441,
+          "extraBelowFooter": -0.03125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4441.03125,
+          "bodyHeight": 4441.03125,
+          "footerBottom": 4441.03125,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-navigation-audio",
+          "viewport": {
+            "width": 375,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4441,
+          "extraBelowFooter": -0.03125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4441.03125,
+          "bodyHeight": 4441.03125,
+          "footerBottom": 4441.03125,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-resize",
+          "viewport": {
+            "width": 375,
+            "height": 760,
+            "visualHeight": 760
+          },
+          "scrollHeight": 4441,
+          "extraBelowFooter": -0.03125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4441.03125,
+          "bodyHeight": 4441.03125,
+          "footerBottom": 4441.03125,
+          "footerHeight": 160.90625
+        }
+      ]
+    },
+    {
+      "prefix": "/bordeaux/",
+      "width": 390,
+      "audioPlayPauseSeek": true,
+      "navigation": true,
+      "errors": [],
+      "failed": [],
+      "measurements": [
+        {
+          "phase": "initial",
+          "viewport": {
+            "width": 390,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4429,
+          "extraBelowFooter": 0.3125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4428.6875,
+          "bodyHeight": 4428.6875,
+          "footerBottom": 4428.6875,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "bottom-images-loaded",
+          "viewport": {
+            "width": 390,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4429,
+          "extraBelowFooter": 0.3125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4428.6875,
+          "bodyHeight": 4428.6875,
+          "footerBottom": 4428.6875,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-navigation-audio",
+          "viewport": {
+            "width": 390,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4429,
+          "extraBelowFooter": 0.3125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4428.6875,
+          "bodyHeight": 4428.6875,
+          "footerBottom": 4428.6875,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-resize",
+          "viewport": {
+            "width": 390,
+            "height": 760,
+            "visualHeight": 760
+          },
+          "scrollHeight": 4429,
+          "extraBelowFooter": 0.3125,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4428.6875,
+          "bodyHeight": 4428.6875,
+          "footerBottom": 4428.6875,
+          "footerHeight": 160.90625
+        }
+      ]
+    },
+    {
+      "prefix": "/bordeaux/",
+      "width": 430,
+      "audioPlayPauseSeek": true,
+      "navigation": true,
+      "errors": [],
+      "failed": [],
+      "measurements": [
+        {
+          "phase": "initial",
+          "viewport": {
+            "width": 430,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4276,
+          "extraBelowFooter": 0.015625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4275.984375,
+          "bodyHeight": 4275.984375,
+          "footerBottom": 4275.984375,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "bottom-images-loaded",
+          "viewport": {
+            "width": 430,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4276,
+          "extraBelowFooter": 0.015625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4275.984375,
+          "bodyHeight": 4275.984375,
+          "footerBottom": 4275.984375,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-navigation-audio",
+          "viewport": {
+            "width": 430,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 4276,
+          "extraBelowFooter": 0.015625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4275.984375,
+          "bodyHeight": 4275.984375,
+          "footerBottom": 4275.984375,
+          "footerHeight": 160.90625
+        },
+        {
+          "phase": "after-resize",
+          "viewport": {
+            "width": 430,
+            "height": 760,
+            "visualHeight": 760
+          },
+          "scrollHeight": 4276,
+          "extraBelowFooter": 0.015625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 4275.984375,
+          "bodyHeight": 4275.984375,
+          "footerBottom": 4275.984375,
+          "footerHeight": 160.90625
+        }
+      ]
+    },
+    {
+      "prefix": "/bordeaux/",
+      "width": 820,
+      "audioPlayPauseSeek": true,
+      "navigation": true,
+      "errors": [],
+      "failed": [],
+      "measurements": [
+        {
+          "phase": "initial",
+          "viewport": {
+            "width": 820,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 3582,
+          "extraBelowFooter": 0.109375,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3581.890625,
+          "bodyHeight": 3581.890625,
+          "footerBottom": 3581.890625,
+          "footerHeight": 116.90625
+        },
+        {
+          "phase": "bottom-images-loaded",
+          "viewport": {
+            "width": 820,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 3582,
+          "extraBelowFooter": 0.109375,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3581.890625,
+          "bodyHeight": 3581.890625,
+          "footerBottom": 3581.890625,
+          "footerHeight": 116.90625
+        },
+        {
+          "phase": "after-navigation-audio",
+          "viewport": {
+            "width": 820,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 3582,
+          "extraBelowFooter": 0.109375,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3581.890625,
+          "bodyHeight": 3581.890625,
+          "footerBottom": 3581.890625,
+          "footerHeight": 116.90625
+        },
+        {
+          "phase": "after-resize",
+          "viewport": {
+            "width": 820,
+            "height": 760,
+            "visualHeight": 760
+          },
+          "scrollHeight": 3582,
+          "extraBelowFooter": 0.109375,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3581.890625,
+          "bodyHeight": 3581.890625,
+          "footerBottom": 3581.890625,
+          "footerHeight": 116.90625
+        }
+      ]
+    },
+    {
+      "prefix": "/bordeaux/",
+      "width": 1440,
+      "audioPlayPauseSeek": true,
+      "navigation": true,
+      "errors": [],
+      "failed": [],
+      "measurements": [
+        {
+          "phase": "initial",
+          "viewport": {
+            "width": 1440,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 3578,
+          "extraBelowFooter": 0.390625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3577.609375,
+          "bodyHeight": 3577.609375,
+          "footerBottom": 3577.609375,
+          "footerHeight": 116.90625
+        },
+        {
+          "phase": "bottom-images-loaded",
+          "viewport": {
+            "width": 1440,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 3578,
+          "extraBelowFooter": 0.390625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3577.609375,
+          "bodyHeight": 3577.609375,
+          "footerBottom": 3577.609375,
+          "footerHeight": 116.90625
+        },
+        {
+          "phase": "after-navigation-audio",
+          "viewport": {
+            "width": 1440,
+            "height": 844,
+            "visualHeight": 844
+          },
+          "scrollHeight": 3578,
+          "extraBelowFooter": 0.390625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3577.609375,
+          "bodyHeight": 3577.609375,
+          "footerBottom": 3577.609375,
+          "footerHeight": 116.90625
+        },
+        {
+          "phase": "after-resize",
+          "viewport": {
+            "width": 1440,
+            "height": 760,
+            "visualHeight": 760
+          },
+          "scrollHeight": 3578,
+          "extraBelowFooter": 0.390625,
+          "horizontalOverflow": 0,
+          "outliers": [],
+          "portraits": 1,
+          "audioElementsInDOM": 0,
+          "htmlHeight": 3577.609375,
+          "bodyHeight": 3577.609375,
+          "footerBottom": 3577.609375,
+          "footerHeight": 116.90625
+        }
+      ]
+    }
+  ]
+}
