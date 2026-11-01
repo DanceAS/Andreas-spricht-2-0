@@ -266,3 +266,10 @@
   }
   #kontakt { padding-bottom:42px; }
 }
+
+/* Smartphone: bestehendes Porträt zwischen Einleitung und weiterem Über-mich-Text. */
+@media(max-width:600px){
+  #ueber-mich .about-copy > .about-portrait {
+    margin:24px 0 35px;
+  }
+}
