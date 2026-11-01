@@ -129,7 +129,12 @@
 #hoerproben .sample p { font-size:14px; }
 #hoerproben .time-row > span:last-child { font-size:11px; }
 @media(max-width:600px){
-    #hoerproben .placeholder-note { font-size:15px; }
+    #hoerproben .placeholder-note {
+    font-size:18px;
+    font-weight:500;
+    margin-top:36px;
+    text-wrap:balance;
+  }
 }
 
 /* Dezenter Facebook-Link ausschließlich im Bordeaux-Footer. */
