@@ -1,0 +1,55 @@
+name: ALL-INKL ZIP der statischen Bordeaux-Version
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Aktuellen Stand von main auschecken
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Python bereitstellen
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Packaging prüfen
+        run: python -m unittest discover -s tests -p test_package_allinkl.py -v
+      - name: Direkt hochladbares ZIP erstellen und prüfen
+        run: python scripts/package_allinkl.py --ref HEAD --output work/allinkl/andreas-spricht-static-allinkl.zip
+      - name: Dateien ohne zusätzliche ZIP-Ebene vorbereiten
+        run: python -m zipfile -e work/allinkl/andreas-spricht-static-allinkl.zip work/allinkl/site
+      - name: andreas-spricht-static-allinkl.zip zum Download bereitstellen
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: andreas-spricht-static-allinkl
+          path: work/allinkl/site/
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 30
+      - name: Artefakt-Link und Herkunft dokumentieren
+        env:
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          data = json.loads(Path('work/allinkl/andreas-spricht-static-allinkl.manifest.json').read_text())
+          summary = f"""## ALL-INKL-Paket
+          - [andreas-spricht-static-allinkl.zip herunterladen]({os.environ['ARTIFACT_URL']})
+          - Quelle: aktueller main, Commit `{data['source_commit']}`
+          - Dateien: {data['file_count']}; HTML, CSS, JS, Bilder und MP3s validiert
+          - Direkt im vorhandenen Ordner `andreas-spricht-static` entpacken, ohne zusätzliche Unterordner-Ebene
+          - Anleitung: `docs/ALL-INKL-static-upload.md`
+          - Nur ein Download-Artefakt erstellt. Kein Upload zu ALL-INKL, kein Deployment und keine Domain-/Weiterleitungsänderung.
+          """
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as output:
+              output.write(summary)
+          PY
