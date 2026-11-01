@@ -130,10 +130,11 @@
 #hoerproben .time-row > span:last-child { font-size:11px; }
 @media(max-width:600px){
     #hoerproben .placeholder-note {
-    font-size:18px;
+    font-size:min(18px,3.8vw);
     font-weight:500;
     margin-top:36px;
-    text-wrap:balance;
+    white-space:nowrap;
+    text-wrap:nowrap;
   }
 }
 
