@@ -1,0 +1,26 @@
+/* Ergänzungen nur für die eigenständige Datenschutzerklärung.
+   Farben und Grundtypografie kommen unverändert aus der Bordeaux-Vorlage. */
+.privacy-content h2 { margin-top:44px; margin-bottom:20px; }
+.privacy-content h3 {
+  font-family:var(--serif);
+  font-size:24px;
+  font-weight:400;
+  line-height:1.35;
+  letter-spacing:-.3px;
+  margin:30px 0 14px;
+  overflow-wrap:anywhere;
+  hyphens:auto;
+}
+.privacy-content h4 {
+  font-size:18px;
+  font-weight:600;
+  line-height:1.6;
+  margin:24px 0 12px;
+}
+.privacy-content ul { margin:0 0 24px; padding-left:1.4em; }
+.privacy-content li { margin-bottom:10px; }
+@media(max-width:600px){
+  .privacy-content h2 { margin-top:36px; }
+  .privacy-content h3 { font-size:22px; }
+  .privacy-content h4 { font-size:17px; }
+}
