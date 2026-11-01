@@ -1,0 +1,90 @@
+/* Gutenberg wrappers adapted to the exact reference layout, without author content. */
+.as-site { font-weight:400; }
+.as-site p { margin-bottom:1em; }
+.as-site figure { margin-block-start:0; }
+.as-site .wp-block-heading { font-family:inherit; }
+.as-site h1.wp-block-heading,.as-site h2.wp-block-heading { font-family:var(--serif); }
+.as-site .header .brand,.as-site .footer .brand { margin:0; }
+.as-site .link-wrap { margin:0; }
+.as-site .header nav > p, .as-site .footer nav > p { display:contents; }
+.as-site .hero-visual > .wp-block-image { margin:0; }
+.as-site .hero-visual__image img, .as-site .about-photo img {
+  display:block; width:100%; height:100%; max-width:none;
+  object-fit:cover; object-position:inherit;
+}
+.as-site .hero-visual__caption { margin:0; }
+.as-site .hero-bottom > p { margin:0; }
+.as-site .hero-bottom .link-wrap { font-size:11px; letter-spacing:2px; }
+.as-site .hero-bottom a span { margin-left:30px; font-size:16px; }
+.as-site .sample-number { margin:0; }
+.as-site .sample-copy p { margin:0; }
+.as-site .player figure { margin:0; width:100%; }
+.as-site .player audio { width:100%; }
+.as-site .player.is-enhanced figure { display:contents; }
+.as-site .player.is-enhanced audio { display:none; }
+.as-site .about-copy > .signature { font:italic 27px var(--serif); color:#975f73; margin:16px 0 0; }
+.as-site .book-cover figure { margin:0; width:100%; }
+.as-site .book-link { display:inline-block; }
+.as-site .legal-address { font-style:normal; margin-bottom:40px; }
+.as-site .footer .wp-block-social-links { margin:0; padding:0; gap:0; list-style:none; }
+.as-site .footer .wp-social-link { background:transparent; color:var(--ink); }
+.as-site .footer .wp-social-link a { display:flex; padding:5px; width:32px; height:32px; }
+.as-site .footer .wp-social-link svg { width:22px; height:22px; }
+.as-site .footer .wp-social-link a:focus-visible { outline:3px solid #a46551; outline-offset:6px; }
+.as-site .footer nav { align-items:center; }
+@media(max-width:600px){
+  .as-site .header nav > p > a { display:inline-flex; align-items:center; white-space:nowrap; min-height:44px; }
+  .as-site .hero-bottom .link-wrap { font-size:9px; }
+  .as-site .hero-bottom a span { margin-left:10px; }
+  .as-site .legal-address { margin-bottom:32px; }
+}
+/* Group image wrappers in the visual editor must fill their clipped containers. */
+.editor-styles-wrapper .as-site .hero-visual__image > .components-resizable-box__container,
+.editor-styles-wrapper .as-site .about-photo > .components-resizable-box__container {
+  width:100%!important; height:100%!important; max-width:none!important; max-height:none!important;
+}
+/* Undo inherited Twenty Twenty-Five tracking; the reference uses normal tracking. */
+.as-site { letter-spacing:normal; }
+.as-site #hoerproben .sample > p.sample-number { font:italic 21px var(--serif); color:#966674; }
+.as-site #ueber-mich .about-copy > p.signature { font:italic 27px var(--serif); color:#975f73; margin:16px 0 0; }
+.as-site .book p.link-wrap { color:inherit; margin:0; }
+.as-site .footer p.brand { color:var(--ink); }
+
+.as-site #ueber-mich .about-copy > p:nth-last-child(2) { margin-bottom:0; }
+.as-site h3, .as-site h4 { letter-spacing:normal; }
+.as-site #ueber-mich .about-copy > p.signature:not(.eyebrow):not(.about-lead) { font:italic 27px var(--serif); }
+/* Native Social Link keeps its editable URL/label; only its icon matches reference. */
+.as-site .footer .wp-social-link a { position:relative; }
+.as-site .footer .wp-social-link-facebook svg { visibility:hidden; }
+.as-site .footer .wp-social-link-facebook a::after { content:""; position:absolute; inset:5px; background:url('facebook.svg') center/contain no-repeat; pointer-events:none; }
+/* Optional native book fields are editable in Gutenberg, invisible only when empty. */
+body:not(.wp-admin) .as-site .book p.book-status:empty,
+body:not(.wp-admin) .as-site .book p.book-description:empty { display:none; }
+.editor-styles-wrapper .as-site .book p.book-status:empty,
+.editor-styles-wrapper .as-site .book p.book-description:empty { display:block; }
+.editor-styles-wrapper .as-site .book p.book-status:empty,
+.editor-styles-wrapper .as-site .book p.book-description:empty { display:block!important; }
+.as-site .legal-content p.legal-address { margin-bottom:40px; }
+@media(max-width:600px){ .as-site .legal-content p.legal-address { margin-bottom:32px; } }
+/* RichText must keep its own box to expose normal link editing controls. */
+.editor-styles-wrapper .as-site .header nav > p,
+.editor-styles-wrapper .as-site .footer nav > p { display:block; margin:0; }
+/* RichText link editing may remove inline classes. Block classNames remain stable. */
+.as-site #studio-books .book-link-wrap > a,
+.as-site #released-books .book-link-wrap > a {
+  display:inline-block; font-size:14px; text-decoration:underline; text-underline-offset:3px;
+}
+.as-site #kontakt .contact-button-wrap > a {
+  display:inline-flex; align-items:center; justify-content:center; min-height:52px;
+  padding:14px 28px; border:1px solid var(--paper); border-radius:999px;
+  background:var(--paper); color:var(--ink); font-size:16px; font-weight:600;
+  line-height:1.4; transition:background .2s;
+}
+.as-site #kontakt .contact-button-wrap > a:hover { background:#ead6da; }
+.as-site #kontakt .contact-button-wrap > a:focus-visible { outline:3px solid var(--paper); outline-offset:5px; }
+.as-site .nav-contact-wrap > a { border:1px solid #d3bbbf; border-radius:30px; padding:10px 21px; }
+@media(max-width:600px){ .as-site .header .nav-contact-wrap > a { padding:6px 10px; } }
+
+.editor-styles-wrapper .as-site .skip { position:static; display:inline-block; }
+
+.editor-styles-wrapper .as-site .footer .wp-social-link-facebook svg { visibility:visible; }

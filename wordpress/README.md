@@ -1,101 +1,98 @@
-# WordPress Phase 1 – isolierter Bordeaux-Prototyp
+# Bordeaux in WordPress – Phase 2
 
 ## Vereinbart
 
-Issue #8: aktuelle statische Referenz prüfen, lokal WordPress mit Twenty Twenty-Five aufsetzen, eine repräsentative Sektion mit nativen Blöcken nachbilden und Text-/Bildänderung im echten Editor nachweisen. Nur Feature-Branch und PR, kein Merge oder Deployment.
+Issue #10 erweitert den gemergten Phase-1-Prototyp aus PR #9 zum vollständigen lokalen Onepager einschließlich rechtlicher Seiten. Referenz: `bordeaux/` auf main `bfc8f30` (unverändert). Verbindlich: Twenty Twenty-Five als unveränderter Parent, kein Pagebuilder, alle redaktionellen Inhalte in nativen Gutenberg-Blöcken und der Mediathek. Nur Feature-Branch und PR, kein Merge oder Deployment. Bestehende statische Website und angefangene ALL-INKL-WordPress-Installation bleiben unberührt.
 
-Die Bordeaux-Referenz wurde bei `26979db128d6f791fe3666f0a342f3c4632764f0` geprüft: `bordeaux/index.html`, `styles.css`, `hero-image-v2.css`, `fit-sample-intro.js`, `mobile-about-portrait.js`, `studio-content.js`, `sample-content.js`, gemeinsame `app.js`/`content.js` sowie Impressum und Datenschutz mit ihren Stylesheets. Keine dieser Dateien wird verändert. Die bestehende ALL-INKL-WordPress-Installation wurde weder angesprochen noch geprüft. Ihr Zustand bleibt unbekannt.
+## Umgesetzt
 
-## Implementiert
+- Vollständiger Header mit zweizeiligem Schriftlogo und Anker-Navigation, Hero, drei Hörproben, Über mich mit mobiler Bildreihenfolge, beide Buchkarten, Kontakt, Footer/Facebook.
+- Impressum und vollständige Datenschutzerklärung als eigene WordPress-Seiten; bestehender Wortlaut übernommen, keine eigenmächtigen rechtlichen Ergänzungen.
+- Ausschließlich native `core/group`, `core/paragraph`, `core/heading`, `core/image`, `core/audio`, `core/social-links`, `core/social-link`, `core/list` und `core/list-item`. Keine Custom-HTML-Blöcke, Shortcodes oder eigenen Blocktypen. Header/Footer liegen mit ihren editierbaren Links im jeweiligen Seiteninhalt. Änderungen am Startseiten-Footer ändern deshalb nicht automatisch die separaten rechtlichen Seiten.
+- MP3s und vier Originalbilder lokal importiert. WordPress bewahrt die Originalbilder auf und erzeugt übliche verkleinerte Varianten. Die Audio-Zuordnung steckt im nativen Audio-Block innerhalb der jeweiligen Hörprobengruppe; Titel und Genre/Autor stehen direkt daneben. Kein Titel, Autor, Buchlink oder MP3-Pfad ist im Laufzeit-JavaScript verdrahtet.
+- Das Child-Theme erweitert nur die Darstellung: `reference.css` ist eine gescopte Kopie der vorhandenen Referenz-Styles, `blocks.css` passt Gutenberg-Wrapper an. Der visuelle Editor erhält dieselben Styles mit Klassen-Aliasen für die gespeicherten Anker-IDs, weil Gutenberg im Editor eigene Block-IDs verwendet. Layoutskripte übernehmen unverändert die vorhandene mobile Textanpassung und Porträtumpositionierung. `player.js` ergänzt native Audio-Blöcke um die bestehende Play/Pause-/Seek-Gestaltung. Ohne JavaScript bleiben die nativen HTML5-Audiosteuerungen nutzbar. Diese kleine, begründete Darstellungs-Ergänzung braucht weder Plugin noch eigenen Blocktyp.
+- Link-Gestaltung bindet an stabile Blockklassen an: WordPress darf beim normalen Link-Editieren zusätzliche Klassen am eingebetteten `<a>` entfernen, ohne dass der Kontaktbutton oder Amazon-Link sein Aussehen verliert.
+- Die beiden optionalen Buchfelder „Buchstatus“ und „Buchbeschreibung“ sind benannte, zunächst leere Absatzblöcke. Leere Felder bleiben im Frontend unsichtbar; es wurden keine neuen Buchangaben erfunden. Die vorhandenen Rubriken/Beschriftungen sind ebenfalls native editierbare Blöcke.
 
-- Docker Compose als dokumentierte gleichwertige Alternative zu wp-env: eigenes Projekt, eigene Datenbank und eigenes WordPress-Volume; ausschließlich `127.0.0.1:8890`, keine Domain und kein externer Datenbankport.
-- WordPress **6.8.3**, PHP/Apache-Image mit PHP **8.3.28**, MariaDB **11.4**, mitgeliefertes Twenty Twenty-Five **1.3**; Container-Images durch SHA-256-Digests fixiert. Das ist eine reproduzierbare **Testbasis**, keine Empfehlung für einen späteren Produktionsversionsstand. Vor einer späteren Migration aktuelle unterstützte Versionen wählen und erneut testen.
-- Minimales Child-Theme `andreas-spricht-bordeaux`, ohne Parent-Änderungen, Pagebuilder oder aktive Zusatzplugins. Keine neuen Blocktypen, keine Shortcodes, kein Frontend-JavaScript. Compose wurde gewählt, weil Docker hier verfügbar ist und die offiziellen WordPress-Images Parent-Theme und Laufzeit mitbringen; keine SQLite-/Datenbank-Erweiterung nötig.
-- Der Hero einschließlich Sprecherzeile, Überschrift, Einleitung, Button, Porträt, Slogan und Abschlusszeile besteht aus **13 nativen Gutenberg-Blöcken**: Group, Paragraph, Heading, Buttons, Button und Image. Keine Custom-HTML-Blöcke, keine Sperren, kein in PHP/CSS generierter Website-Text.
-- Inhalte liegen nach dem einmaligen Seed in `post_content` und der Mediathek. `content/hero.html` ist nur der initiale Ausgangsinhalt; spätere Editoränderungen benötigen keine Dateiänderung. Der Seed überschreibt vorhandenen Seiteninhalt bei erneutem Start nicht.
-- `theme.json` definiert Bordeaux/Creme/Rosé und Schriftfamilien. `prototype.css` gestaltet ausschließlich `.as-prototype`; dieselbe CSS-Datei wird im Editor geladen. Editor-spezifische Anpassung füllt Gutenbergs zusätzlichen Bild-Wrapper aus. Die responsiven Bildausschnitte folgen der statischen Referenz; insbesondere greift mobil die effektive 340-px-Bogenhöhe.
-- Beide vorhandenen Porträts werden aus lokalen, unveränderten Quellen in die isolierte Mediathek importiert. WordPress erzeugt seine üblichen verkleinerten Bildvarianten; Originaldateien bleiben erhalten und sind bytegleich. Der Bildblock nutzt die normale WordPress-Medien-URL, keine fest codierte Live-URL.
-- Lokales `noindex`, externe WordPress-HTTP-Aufrufe und Cron deaktiviert, PHP-Dateieditor deaktiviert. Keine Hosting-Zugangsdaten. Zufällige lokale Zugangsdaten ausschließlich in ignorierter `.env`.
+## Lokal starten
 
-**Begrenzung:** Nur der Hero ist umgesetzt. Kein Header, keine Navigation, keine weiteren Startseitenabschnitte, kein Footer und keine rechtlichen Seiten in WordPress. Die originalen Hero-Links auf `#hoerproben` sind als editierbare Links erhalten; ihr Zielabschnitt existiert in Phase 1 noch nicht. Der Prototyp ist deshalb ausdrücklich keine vollständige oder veröffentlichungsfähige Website.
+Die bereits vereinbarte isolierte Docker-Compose-Umgebung bleibt erhalten: eigenes Projekt `andreas-spricht-phase1`, eigene Volumes und Datenbank, nur Loopback-Port **127.0.0.1:8890**. Keine Verbindung zu ALL-INKL. Container-Images bleiben durch Digests fixiert; getestete Basis: WordPress 6.8.3, Twenty Twenty-Five 1.3, Web-PHP 8.3.28 und MariaDB 11.4.13. Das ist ein reproduzierbarer Teststand, keine Produktionsversions-Empfehlung.
 
-## Lokal installieren und öffnen
-
-Voraussetzungen: Git-Checkout dieses Branches, Docker Engine mit Compose v2 (`--wait` unterstützt), Bash und Python 3. Für die automatisierten Browsertests zusätzlich Node.js, Playwright und Chromium. Besucher der späteren Website benötigen diese Werkzeuge nicht.
-
-Aus der Repository-Wurzel:
+Voraussetzungen: Docker mit Compose v2, Bash, Python 3. Aus der Repository-Wurzel:
 
 ```sh
 ./wordpress/setup.sh
 ```
 
-Der erste Start lädt die drei fixierten offiziellen Images, erzeugt die isolierten Volumes und installiert die lokale Website. Die Bilder werden in `.local-assets/` kopiert, damit Container sie trotz restriktiver Workspace-Dateirechte lesen können. Referenzdateien bleiben unverändert. Das Skript setzt nur Lese-/Verzeichnisrechte auf seinen eigenen Theme-/Bootstrap-Dateien und Bildkopien; `.env` bleibt privat (0600).
+Beim ersten Phase-2-Start werden **neue** Seiten angelegt. Die gespeicherte Phase-1-Seite bleibt erhalten; die neue vollständige Seite wird zur lokalen Startseite. Wiederholte Aufrufe überschreiben keine gespeicherten Phase-1-/Phase-2-Texte, Medienzuordnungen oder Links. Die gesetzte Seed-Markierung nicht löschen, um erneut Inhalte einzuspielen: stattdessen im Editor arbeiten. Eine frische Datenbank erzeugt reproduzierbare Ausgangsinhalte.
 
 - Frontend: <http://127.0.0.1:8890/>
-- Verwaltung: <http://127.0.0.1:8890/wp-admin/>
-- Zugang: `WP_ADMIN_USER` und `WP_ADMIN_PASSWORD` in der **lokalen** Datei `wordpress/.env`. Datei nicht committen, verschicken oder in Screenshots zeigen.
-- Im Backend **Seiten → Bordeaux – Phase 1 → Bearbeiten** wählen. Die englische Editor-Oberfläche der fixierten Basis ist hier praktisch getestet. Deutsche Sprachpakete werden nicht heimlich nachinstalliert; alle Website-Texte sind deutsch.
+- Editor: <http://127.0.0.1:8890/wp-admin/>, dann **Seiten → Andreas spricht / Impressum / Datenschutzerklärung → Bearbeiten**.
+- Zugangsdaten ausschließlich in der ignorierten Datei `wordpress/.env`; nicht committen oder weitergeben.
+- Rechtliche Links verwenden die von WordPress ermittelten Seiten-URLs, aktuell `?page_id=…`. Keine GitHub-Pages-Basis oder Live-Domain ist als Ziel fest eingebaut.
+- `127.0.0.1` ist der Docker-Rechner, **kein öffentlicher iPad-Vorschau-Link**. Es wurde nichts öffentlich freigegeben.
 
-`127.0.0.1` bezeichnet den Rechner, auf dem Docker läuft, und ist **kein öffentlicher Vorschau-Link für das iPad**. Es wurde keine Portfreigabe oder öffentliche Cloud-Vorschau eingerichtet. Für eine spätere gemeinsame Vorschau erst eine getrennte Testumgebung und ihren Zugang vereinbaren; keine bestehende Domain umhängen.
-
-Ein erneuter Aufruf von `setup.sh` erhält Seiteninhalt, Mediathek und Datenbank. `.env` und Volumes zusammen aufbewahren: neue Zugangsdaten in einer neu erzeugten `.env` passen nicht automatisch zu einer bereits vorhandenen Datenbank.
-
-Stoppen/erneut starten:
+Stoppen bzw. starten, aus `wordpress/`:
 
 ```sh
-cd wordpress
 docker compose stop
 docker compose up -d --wait wordpress
 ```
 
-Vollständiges Entfernen **nur dieser lokalen Testdaten** ist optional und löscht Editoränderungen und Medien:
+Optionales vollständiges Zurücksetzen **nur der isolierten lokalen Datenbank und Medien** löscht sämtliche dortigen Editoränderungen:
 
 ```sh
 cd wordpress
 docker compose down --volumes
+./setup.sh
 ```
 
-Danach erstellt `setup.sh` mit der erhaltenen `.env` einen frischen Prototyp. Keinen dieser Schritte in einem Hosting-/Produktionsverzeichnis ausführen.
+`.env` und vorhandene Volumes zusammen behalten. Neue Passwörter in einer neu angelegten `.env` ändern nicht die Passwörter einer bereits vorhandenen Datenbank. Die Quelldateien und disposable Medienkopien erhalten nur die für die Container benötigten Leserechte; `.env` bleibt 0600.
 
-## Selbst Text und Bild bearbeiten
+## Ohne Code bearbeiten
 
-1. Im visuellen Seiteneditor die Sprecherzeile oder einen anderen Textblock anklicken und schreiben; **Save/Speichern** drücken.
-2. Für das Porträt gegebenenfalls über **Document Overview/List View** den Block **Group → Image** auswählen. In dessen Werkzeugleiste **Replace → Open Media Library → Media Library** wählen, ein Bild anklicken und **Select** drücken. Alternativ im Medienfenster ein eigenes Bild hochladen; das lokale PHP-Limit beträgt 32 MB. Der Upload eines weiteren Bildes wurde in Phase 1 nicht automatisiert nachgewiesen, der Wechsel zwischen vorhandenen Medien schon.
-3. Alternativtext im Bildblock bearbeiten; danach speichern und Frontend neu laden. Das Motiv wird proportional innerhalb der unveränderten Bogenfläche beschnitten.
-4. Kein Code-Editor und keine Dateiänderung sind für diese Inhaltsänderungen nötig. Bogenmaße und geräteabhängige Bildposition sind derzeit Präsentations-CSS; eine redaktionelle Bildausschnitt-Steuerung ist eine offene Folgeentscheidung.
+Im visuellen Seiteneditor über **Document Overview / List View** die Gruppe oder den Inhalt auswählen. Die Website ist auf `de_DE` eingestellt. Ohne zusätzliche Sprachpakete bleibt die hier getestete Backend-Oberfläche Englisch; die Website-Texte sind Deutsch. Es werden keine Sprachpakete extern nachgeladen.
 
-## Technisch überprüft
+| Inhalt | Bedienung |
+| --- | --- |
+| Texte/Überschriften/Genre/Autor/Signatur/Copyright | Entsprechenden Textblock anklicken, schreiben und Save drücken. Gewünschte feste Zeilenumbrüche mit Shift+Enter setzen. |
+| Logo | Absatz mit verlinktem zweizeiligem Schriftzug bearbeiten; den Zeilenumbruch behalten. |
+| Navigation, Amazon-Links, Kontakt-CTA | Link direkt anklicken → Edit link → Text/Link ändern → kleines Save, anschließend Seite speichern. Der CTA bleibt ein echter `mailto:`-Link, kein Versandformular. |
+| Fotos/Cover | Image-Block auswählen → Replace → Open Media Library → Media Library → Bild → Select. Alternativ hochladen (lokales Limit 32 MB). Alt-Text im Bildblock bearbeiten. Der Austausch vorhandener Medien ist praktisch getestet; der Upload eines zusätzlichen eigenen Mediums ist separat zu prüfen. |
+| Hörprobe/MP3 | In der betreffenden Hörprobengruppe den nativen Audio-Block auswählen → Replace → Open Media Library → gewünschte MP3 → Select. Direkt daneben Titel und Genre/Autor bearbeiten. Kein Code erforderlich. |
+| Hörprobenreihenfolge | Komplette Hörprobengruppe verschieben, damit Beschriftung und Audio zusammenbleiben. Die sichtbare Nummer ist ein normaler Absatz und muss beim Umordnen mit angepasst werden. |
+| Bücher | Titel, Autor und Link direkt bearbeiten, Cover als Image-Block ersetzen. Optionale benannte Status-/Beschreibungsabsätze ausfüllen; leere Absätze bleiben verborgen. |
+| Facebook | Nativen Social Icon auswählen, URL im Linkfeld und zugängliche Beschriftung im Textfeld bearbeiten. Neue-Tab-Einstellung liegt am übergeordneten Social Icons-Block. |
+| Impressum/Datenschutz | Jeweilige Seite öffnen; Überschriften, Absätze, Listen und Links sind native Blöcke. Rechtstexte nur mit fachlich freigegebenem Inhalt ändern. |
 
-Siehe [Prüfbericht](TEST-REPORT.md) und [kompakten maschinenlesbaren Nachweis](evidence/results.json). Die dortigen Aussagen trennen tatsächliche Editor-/Frontend-Tests von offenen Folgeaufgaben.
+Header/Footer sind pro Seite gespeichert. Die mobile Porträt-Umpositionierung und das dynamische Einpassen des Hörproben-Einleitungssatzes laufen im Frontend; die Editor-Listenansicht behält die gespeicherte Grundreihenfolge. Für die tatsächliche mobile Darstellung die Frontend-Vorschau prüfen. Die geräteabhängige Bogenform und die exakten Bildpositionen sind Präsentations-CSS; ein visueller Focal-Point-Regler ist nicht implementiert. Das ist kein Hindernis zum Austauschen der Bilddatei, muss aber bei einem neuen Motiv praktisch geprüft werden. Neue Bücher/Hörprobengruppen können als bestehende native Gruppe dupliziert und danach angepasst werden; alle vier Bilder und drei Audios sind bereits in der lokalen Mediathek.
 
-Read-only Laufzeit-/Block-/Originaldateiprüfung:
+## Tests und Nachweise
+
+[Prüfbericht](TEST-REPORT.md), [maschinenlesbare Nachweise](evidence/phase2/results.json) und verlinkte Screenshots. Historische Phase 1: [Anleitung](PHASE-1.md), [Prüfbericht](TEST-REPORT-PHASE-1.md).
 
 ```sh
+# Nur lesende native Block-/Medien-/Parent-Prüfung
 docker compose -f wordpress/compose.yml exec -T wordpress php /prototype/verify.php
+# Echte Editoränderungen und Wiederherstellung, nur lokal
+node wordpress/tests/editor-phase2.cjs
+node wordpress/tests/editor-social-list.cjs
+# Vollständiger Browser-/Referenztest bei acht Breiten
+node wordpress/tests/site.cjs
 ```
 
-Automatisierter echter Editor-Test (ändert nur die lokale Testseite und stellt die Originalinhalte danach über denselben Editor wieder her):
+Browsertests benötigen Node.js, Playwright und Chromium. Bei Bedarf separat lokal `npm install --no-save --package-lock=false playwright`; `CHROMIUM_PATH` für einen anderen Chromium-Pfad setzen. Für eine Umgebung mit installiertem Playwright-WebKit: `BROWSER=webkit node wordpress/tests/site.cjs`. Tests nacheinander ausführen: der Editor-Test verändert vorübergehend den lokalen Seiteninhalt. Bei einem Testabbruch die betroffenen lokalen Teständerungen im Editor zurücksetzen bzw. eine frische isolierte Umgebung verwenden. Rohdaten entstehen unter `work/issue-10/`, nicht im Deployment.
 
-```sh
-node wordpress/tests/editor.cjs
-```
+Die initialen Gutenberg-Dateien und die CSS-Referenzkopie können bei einer bewusst geplanten erneuten Referenzübernahme mit `python3 wordpress/tools/build-content.py` erzeugt werden (Python-Standardbibliothek). Das überschreibt nur versionierte Seed-/Präsentationsdateien, **keine WordPress-Editorinhalte**. Nicht als Aktualisierungsmechanismus für redaktionelle Änderungen verwenden.
 
-Referenzvergleich, acht Breiten, ohne Zugriff auf Live-Domains:
+## Mindestvoraussetzungen vor einem späteren Deployment
 
-```sh
-node wordpress/tests/responsive.cjs
-```
+Noch **keine** Freigabe zur Veröffentlichung. Separat erforderlich:
 
-Die beiden Browsertests nacheinander ausführen, da der Editor-Test vorübergehend den lokalen Seiteninhalt ändert. Sie setzen bereits verfügbares `playwright` und Chromium voraus. Bei Bedarf in einer eigenen Entwicklungsumgebung lokal `npm install --no-save --package-lock=false playwright`; für einen anderen Chromium-Pfad `CHROMIUM_PATH` setzen. Die Repository-Abhängigkeiten und die bestehende statische Vorschau werden dafür nicht geändert. Rohdaten und weitere Screenshots entstehen ausschließlich in `work/issue-8/`.
-
-## Offene Fragen und weitere Phasen
-
-1. **Phase-1-Abnahme:** Hero-Look, native Bearbeitung und Child-Theme-Ansatz prüfen. Der hier ausdrücklich beauftragte minimale Ansatz fügt keine Plugins hinzu. Erweiterungen oder ein anderer Architekturansatz bedürfen vorheriger Begründung und Zustimmung.
-2. **Versionen/Redaktion:** aktuelle unterstützte WordPress-/Twenty-Twenty-Five-/PHP-Versionen für eine spätere Zielumgebung festlegen; deutsche Backend-Sprache und gewünschte Redakteursrolle vereinbaren. Der aktuelle Nachweis wurde mit lokalem Admin durchgeführt, nicht mit einem eingeschränkten Redakteurskonto.
-3. **Weitere native Abschnitte:** Hörproben mit Core Audio (statt gemeinsamem statischem JS), Über mich mit Bild-/Absatzblöcken und mobiler Reihenfolge, Bücher als Gruppen mit Image/Heading/Paragraph/Buttons. Für jeden Inhalt Editoränderung und Frontend erneut praktisch nachweisen. Keine zusätzliche Inhaltsverwaltung oder Plugins ohne Zustimmung.
-4. **Header/Footer:** Logo, Navigation, Facebook und Kontakt mit nativen Navigation-/Site-/Group-/Buttons-Blöcken und Template-Parts; responsive Kontrolle und Tastaturbedienung. Linkziele erst mit echten WordPress-Seiten und Ankern verbinden.
-5. **Rechtliche Seiten:** vorhandenes Impressum und vollständige Datenschutzerklärung aus der Referenz zunächst in ihrer Quelle belassen. In einer späteren Phase als native Textblöcke übernehmen und für die tatsächliche WordPress-/Hosting-Konfiguration prüfen lassen; WordPress-, Medien-, Cookie- und etwaige Plugin-Dienste können gegenüber der statischen Seite abweichen. In Phase 1 keine Rechtstexte ergänzt oder umgeschrieben.
-6. **Vollständige isolierte Abnahme:** alle Medien/Audios, Links, SEO, Accessibility, Ladezeit, Editorrollen und echte Safari-/iPhone-/iPad-Tests. Chromium-Viewporttests sind kein Safari-Nachweis. Die offene Safari-Diagnose aus Issue #6 wird durch diesen Prototyp nicht als gelöst erklärt.
-7. **Spätere Hosting-Prüfung separat freigeben:** Zustand der existierenden ALL-INKL-WordPress-Installation, Datenbank, Plugins, Versionen, Backups und Erreichbarkeit erst nach gesonderter Erlaubnis prüfen. Bisher keinerlei Zugriff. Migration, DNS/SSL/Domainzuweisung und Live-Umschaltung sind nicht Teil dieses PR und benötigen eine eigene Freigabe mit Rückfallplan.
-
-Die funktionierende lokale Sektion belegt den Ansatz und die Bearbeitbarkeit **dieser Sektion**, nicht die Fertigstellung der gesamten WordPress-Website.
+1. Aktuelle unterstützte WordPress-/PHP-/Datenbankversion und passendes Twenty Twenty-Five festlegen; auf diesem Stand alle Editor- und Frontendtests wiederholen. Testdaten/Benutzer und lokale Sperr-/Debugkonfiguration nicht ungeprüft übernehmen.
+2. Erst nach eigener Erlaubnis bestehende ALL-INKL-Installation, Datenbank, Plugins, Zugriffsrechte und Backups prüfen. Ihr Zustand ist weiterhin unbekannt. Keine Annahme, dass der lokale Stand dort bereits funktioniert.
+3. Getrennte Hosting-Testumgebung mit HTTPS und funktionierenden Medien-/Byte-Range-Antworten; Uploadlimits für Originalbilder/MP3s sowie Speicher-, PHP- und Datenbankrechte prüfen. Es gibt keine Hosting-Zugangsdaten oder Deployment-Automatik in diesem PR.
+4. Standardmäßige WordPress-Migration von Datenbank, Uploads und Child-Theme planen; URLs/Seitenverweise fachgerecht an die genehmigte Test-URL anpassen. WordPress, Parent-Theme und Uploads dürfen nicht allein durch Kopieren dieses Child-Themes ersetzt werden.
+5. Auf dem echten Hosting Texte, Bilder, MP3s, Cover, Status, Beschreibung, Links und rechtliche Seiten im Editor ändern/speichern und Frontend prüfen; eingeschränkte Redakteursrolle separat testen.
+6. Echter Safari-/iPhone-/iPad-Test inklusive Seitenende, Navigation und Player. Cookie-/Datenschutz-/SEO-/Accessibility-Prüfung für die tatsächliche WordPress-Konfiguration; die unverändert migrierte statische Datenschutzerklärung ist keine neue fachliche Freigabe für WordPress.
+7. Gesonderte Abnahme mit Backup-/Rückfallplan **vor** Veröffentlichung oder Domain-/DNS-/SSL-Änderungen. Die statische Live-Seite bleibt bis dahin vollständig bestehen.
