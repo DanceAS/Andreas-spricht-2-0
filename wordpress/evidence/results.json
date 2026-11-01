@@ -1,0 +1,147 @@
+{
+  "referenceCommit": "26979db128d6f791fe3666f0a342f3c4632764f0",
+  "dateUTC": "2026-11-01",
+  "scope": "local phase-1 hero only; not a production migration",
+  "browser": "Chromium 154.0.8037.57 (Linux; no Safari test)",
+  "runtime": {
+    "wordpress": "6.8.3",
+    "parent": "1.3",
+    "php_cli": "8.3.28",
+    "native_blocks": 13,
+    "active_plugins": 0,
+    "parent_unchanged": true,
+    "original_media_unchanged": true,
+    "local_only": true,
+    "noindex": true
+  },
+  "editor": {
+    "pageId": 6,
+    "textEditedThroughUI": true,
+    "imageReplacedThroughUI": true,
+    "savedFrontendVerified": true,
+    "editorReloadVerified": true,
+    "restoredThroughUI": true,
+    "blocks": [
+      {
+        "name": "core/group",
+        "valid": true
+      },
+      {
+        "name": "core/group",
+        "valid": true
+      },
+      {
+        "name": "core/paragraph",
+        "valid": true
+      },
+      {
+        "name": "core/heading",
+        "valid": true
+      },
+      {
+        "name": "core/paragraph",
+        "valid": true
+      },
+      {
+        "name": "core/buttons",
+        "valid": true
+      },
+      {
+        "name": "core/button",
+        "valid": true
+      },
+      {
+        "name": "core/group",
+        "valid": true
+      },
+      {
+        "name": "core/image",
+        "valid": true
+      },
+      {
+        "name": "core/paragraph",
+        "valid": true
+      },
+      {
+        "name": "core/group",
+        "valid": true
+      },
+      {
+        "name": "core/paragraph",
+        "valid": true
+      },
+      {
+        "name": "core/paragraph",
+        "valid": true
+      }
+    ],
+    "editorImageFillsArch": true
+  },
+  "responsive": [
+    {
+      "width": 320,
+      "passed": true,
+      "maxMeasuredGeometryDeltaPx": 0,
+      "horizontalOverflowPx": 0
+    },
+    {
+      "width": 375,
+      "passed": true,
+      "maxMeasuredGeometryDeltaPx": 0,
+      "horizontalOverflowPx": 0
+    },
+    {
+      "width": 390,
+      "passed": true,
+      "maxMeasuredGeometryDeltaPx": 0,
+      "horizontalOverflowPx": 0
+    },
+    {
+      "width": 430,
+      "passed": true,
+      "maxMeasuredGeometryDeltaPx": 0,
+      "horizontalOverflowPx": 0
+    },
+    {
+      "width": 820,
+      "passed": true,
+      "maxMeasuredGeometryDeltaPx": 0,
+      "horizontalOverflowPx": 0
+    },
+    {
+      "width": 1024,
+      "passed": true,
+      "maxMeasuredGeometryDeltaPx": 0,
+      "horizontalOverflowPx": 0
+    },
+    {
+      "width": 1366,
+      "passed": true,
+      "maxMeasuredGeometryDeltaPx": 0,
+      "horizontalOverflowPx": 0
+    },
+    {
+      "width": 1440,
+      "passed": true,
+      "maxMeasuredGeometryDeltaPx": 0,
+      "horizontalOverflowPx": 0
+    }
+  ],
+  "seedRerunPreservesContent": "Content SHA-256 unchanged across setup rerun: b3345c264467bcd723a3451cc3ec71f02274f1e86b7e8c0d1af97290f5235565",
+  "codeSHA256": {
+    "wordpress/compose.yml": "2e8f77d1dc6b633de4f520b1396e8fce58a46df16f2e2e63de3d9bfd35bfe096",
+    "wordpress/content/hero.html": "d8f57793ea9b7a44304c7ff439dc550a0ed0ea7f57afe4bd0c5f562130562d5a",
+    "wordpress/content/seed.php": "aa24a1e03f59c0fc560ba6b00f23c1833d59a46c5bbdb6e190ef886bb978fb7a",
+    "wordpress/content/verify.php": "2ad36eebb2bd2de14e7ea44eb574e08841f6d1eb091ddf5aa6148d48b68991e4",
+    "wordpress/setup.sh": "9d615e946139a26cab4f2a26e027b414d62ac05e600d6ffdb4c681a12a840877",
+    "wordpress/tests/editor.cjs": "63e67b358e79fd635829325d218461a4e455381da194a921e6338a1a7b3d201d",
+    "wordpress/tests/responsive.cjs": "f1539ad2bf950234b6a474f5f71b9f76350dfd198e018a5ff6fbf1910f765c3c",
+    "wordpress/theme/andreas-spricht-bordeaux/functions.php": "da92a1a4bf9ef69df7ec15ba8082dac7efeacf50fa5722813d1e7d88620b5ce2",
+    "wordpress/theme/andreas-spricht-bordeaux/prototype.css": "5b40cf010d89408a175192bc3d0af9b91153964816b4ac185096280e674f3707",
+    "wordpress/theme/andreas-spricht-bordeaux/style.css": "288d221b0ececd6fe3de3edf853a47e166bb4c3eb079bbd1dea7773d8309dcdb",
+    "wordpress/theme/andreas-spricht-bordeaux/templates/front-page.html": "a8c386cf78b5ee79683d46e14f448b3be6f14e6bb2c9873600e9a46d72702cab",
+    "wordpress/theme/andreas-spricht-bordeaux/templates/index.html": "a8c386cf78b5ee79683d46e14f448b3be6f14e6bb2c9873600e9a46d72702cab",
+    "wordpress/theme/andreas-spricht-bordeaux/theme.json": "f5e6b1470aaef7fd848ba08923eb28c6bd5366d37610ee9432750c41e7e3a960",
+    "wordpress/uploads.ini": "beb5611ac753f8e05da0e9186e69c64e03a04c3d8ed0b13671b3982688e3ca4a"
+  }
+}

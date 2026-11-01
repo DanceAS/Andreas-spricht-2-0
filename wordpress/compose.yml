@@ -1,0 +1,58 @@
+name: andreas-spricht-phase1
+services:
+  db:
+    image: mariadb:11.4@sha256:d1891ede5a559f1086f55053bb8cc1569b0298338c4d72d71725a7f74f6ba620
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: ${WP_DB_PASSWORD:?Run setup.sh first}
+      MARIADB_ROOT_PASSWORD: ${WP_DB_ROOT_PASSWORD:?Run setup.sh first}
+    volumes:
+      - database:/var/lib/mysql
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+  wordpress:
+    image: wordpress:6.8.3-php8.3-apache@sha256:30bff39330d1693b0ce13d32fc9b7bb67193064f040b7d60d3494e136fa599d4
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - '127.0.0.1:8890:80'
+    environment: &wp-environment
+      WORDPRESS_DEBUG: '1'
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${WP_DB_PASSWORD}
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_ENVIRONMENT_TYPE', 'local');
+        define('WP_HTTP_BLOCK_EXTERNAL', true);
+        define('DISABLE_WP_CRON', true);
+        define('DISALLOW_FILE_EDIT', true);
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', false);
+    volumes: &wp-volumes
+      - ./uploads.ini:/usr/local/etc/php/conf.d/as-local-uploads.ini:ro
+      - site:/var/www/html
+      - ./theme/andreas-spricht-bordeaux:/var/www/html/wp-content/themes/andreas-spricht-bordeaux:ro
+      - ./content:/prototype:ro
+      - ./.local-assets:/reference-assets:ro
+  cli:
+    image: wordpress:cli-php8.3@sha256:6bcc7bb91f5157c4b915e74ee131873e99c1c1ff48f602e4a6f6cd17827305cb
+    profiles: [tools]
+    user: '33:33'
+    environment:
+      <<: *wp-environment
+      HOME: /tmp
+      WP_ADMIN_USER: ${WP_ADMIN_USER}
+      WP_ADMIN_PASSWORD: ${WP_ADMIN_PASSWORD}
+    volumes: *wp-volumes
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  database:
+  site:
