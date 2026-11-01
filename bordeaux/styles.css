@@ -215,3 +215,28 @@
   #start > .hero-bottom { grid-row:3; }
   #start h1 { font-size:clamp(56px,17.9vw,70px); }
 }
+
+/* Smartphone: derselbe Nordost-Pfeil wie am Desktop, ohne Emoji-Fallback. */
+@media(max-width:600px){
+  .header .nav-contact > span {
+    --contact-arrow-shape:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 20 20 4M5 4h15v15' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E");
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 14px;
+    width:14px;
+    height:14px;
+    margin-left:6px;
+    font-size:0;
+    line-height:1;
+  }
+  .header .nav-contact > span::before {
+    content:"";
+    display:block;
+    width:14px;
+    height:14px;
+    background-color:currentColor;
+    -webkit-mask:var(--contact-arrow-shape) center / contain no-repeat;
+    mask:var(--contact-arrow-shape) center / contain no-repeat;
+  }
+}
