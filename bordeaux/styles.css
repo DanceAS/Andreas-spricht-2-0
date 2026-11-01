@@ -132,7 +132,7 @@
 @media(max-width:600px){
     #hoerproben .placeholder-note {
     font-size:min(18px,3.8vw);
-    font-weight:500;
+    font-weight:600;
     margin-top:36px;
     white-space:nowrap;
     text-wrap:nowrap;
