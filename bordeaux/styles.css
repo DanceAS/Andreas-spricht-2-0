@@ -248,7 +248,7 @@
   }
 }
 
-/* Nur Smartphones: die beiden Buchbereich-Beschriftungen um 2px vergrößern. */
+/* Nur Smartphones: beide Buchbereich-Beschriftungen in 18px Semibold. */
 @media(max-width:600px){
-  #hoerbuecher .column-description { font-size:16px; }
+  #hoerbuecher .column-description { font-size:18px; font-weight:600; }
 }
