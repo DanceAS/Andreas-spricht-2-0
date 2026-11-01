@@ -116,9 +116,9 @@
 }
 
 /* Nur die Sprecherzeile im Startbereich um einen Pixel vergrößern. */
-#start .hero-copy > .eyebrow { font-size:11px; }
+#start .hero-copy > .eyebrow { font-size:13px; }
 @media(max-width:600px){
-  #start .hero-copy > .eyebrow { font-size:9px; }
+  #start .hero-copy > .eyebrow { font-size:13px; }
 }
 
 /* Ausschließlich die Typografie im Hörprobenbereich verfeinern. */
