@@ -33,6 +33,8 @@ jobs:
           cp bordeaux/index.html bordeaux/styles.css bordeaux/hero-image-v2.css bordeaux/studio-content.js bordeaux/sample-content.js bordeaux/fit-sample-intro.js bordeaux/mobile-about-portrait.js _site/bordeaux/
           cp bordeaux/impressum.css _site/bordeaux/
           cp -R bordeaux/impressum _site/bordeaux/
+          cp bordeaux/datenschutz.css _site/bordeaux/
+          cp -R bordeaux/datenschutz _site/bordeaux/
           cp content.js app.js _site/bordeaux/
           if [ -d assets ]; then
             mkdir -p _site/bordeaux/assets
