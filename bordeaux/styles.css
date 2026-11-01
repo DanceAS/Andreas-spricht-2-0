@@ -122,7 +122,6 @@
 }
 
 /* Ausschließlich die Typografie im Hörprobenbereich verfeinern. */
-#hoerproben .eyebrow { font-size:11px; }
 #hoerproben .placeholder-note {
   font-size:16px;
   line-height:1.6;
@@ -130,8 +129,7 @@
 #hoerproben .sample p { font-size:14px; }
 #hoerproben .time-row > span:last-child { font-size:11px; }
 @media(max-width:600px){
-  #hoerproben .eyebrow { font-size:9px; }
-  #hoerproben .placeholder-note { font-size:15px; }
+    #hoerproben .placeholder-note { font-size:15px; }
 }
 
 /* Dezenter Facebook-Link ausschließlich im Bordeaux-Footer. */
@@ -150,16 +148,23 @@
 .footer .footer-facebook svg { display:block; }
 
 /* Ausschließlich die Typografie im Hörbuchbereich vereinheitlichen. */
-#hoerbuecher .eyebrow { font-size:11px; }
 #hoerbuecher .column-description { font-size:14px; }
 #hoerbuecher .book p { font-size:16px; }
 #hoerbuecher .book-link { font-size:14px; }
-@media(max-width:600px){
-  #hoerbuecher .eyebrow { font-size:9px; }
-}
 
-/* Abschnitt 02: dieselbe Schriftgröße wie die Kennzeichnungen 01 und 03. */
-#ueber-mich .eyebrow { font-size:11px; }
+
+/* Gemeinsame Typografie ausschließlich für die Abschnittskennzeichnungen 01–03. */
+.eyebrow.section-label {
+  font-family:inherit;
+  font-size:11px;
+  font-weight:600;
+  font-style:normal;
+  line-height:1.65;
+  letter-spacing:2px;
+}
 @media(max-width:600px){
-  #ueber-mich .eyebrow { font-size:9px; }
+  .eyebrow.section-label {
+    font-size:9px;
+    letter-spacing:1.6px;
+  }
 }
