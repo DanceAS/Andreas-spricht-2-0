@@ -157,3 +157,9 @@
 @media(max-width:600px){
   #hoerbuecher .eyebrow { font-size:9px; }
 }
+
+/* Abschnitt 02: dieselbe Schriftgröße wie die Kennzeichnungen 01 und 03. */
+#ueber-mich .eyebrow { font-size:11px; }
+@media(max-width:600px){
+  #ueber-mich .eyebrow { font-size:9px; }
+}
