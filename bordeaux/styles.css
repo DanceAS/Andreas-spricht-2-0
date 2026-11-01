@@ -153,10 +153,10 @@
 #hoerbuecher .book-link { font-size:14px; }
 
 
-/* Gemeinsame Typografie ausschließlich für die Abschnittskennzeichnungen 01–03. */
+/* Gemeinsame Typografie ausschließlich für die Abschnittskennzeichnungen 01–04. */
 .eyebrow.section-label {
   font-family:inherit;
-  font-size:11px;
+  font-size:13px;
   font-weight:600;
   font-style:normal;
   line-height:1.65;
@@ -164,7 +164,7 @@
 }
 @media(max-width:600px){
   .eyebrow.section-label {
-    font-size:9px;
+    font-size:12px;
     letter-spacing:1.6px;
   }
 }
