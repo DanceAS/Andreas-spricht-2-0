@@ -133,3 +133,18 @@
   #hoerproben .eyebrow { font-size:9px; }
   #hoerproben .placeholder-note { font-size:15px; }
 }
+
+/* Dezenter Facebook-Link ausschließlich im Bordeaux-Footer. */
+.footer nav { align-items:center; }
+.footer .footer-facebook {
+  position:relative;
+  display:inline-flex;
+  flex-shrink:0;
+  align-items:center;
+  justify-content:center;
+  width:32px;
+  height:32px;
+  color:var(--ink);
+}
+.footer .footer-facebook::before { content:""; position:absolute; inset:-6px; }
+.footer .footer-facebook svg { display:block; }
