@@ -3,3 +3,7 @@ node_modules/
 work/
 
 __pycache__/
+
+# Isolierte WordPress-Testumgebung: niemals Zugangsdaten versionieren.
+wordpress/.env
+wordpress/.local-assets/

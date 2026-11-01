@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+  "version": 3,
+  "settings": {
+    "layout": {"contentSize": "1200px", "wideSize": "1360px"},
+    "color": {"palette": [
+      {"slug": "paper", "color": "#faf5ee", "name": "Creme"},
+      {"slug": "bordeaux", "color": "#591f30", "name": "Bordeaux"},
+      {"slug": "rose", "color": "#985d70", "name": "Rosé"}
+    ]},
+    "typography": {"fontFamilies": [
+      {"slug": "sans", "name": "Arial", "fontFamily": "Arial, Helvetica, sans-serif"},
+      {"slug": "serif", "name": "Georgia", "fontFamily": "Georgia, 'Times New Roman', serif"}
+    ]}
+  },
+  "styles": {
+    "color": {"background": "#faf5ee", "text": "#591f30"},
+    "spacing": {"blockGap": "0", "padding": {"top": "0", "right": "0", "bottom": "0", "left": "0"}},
+    "typography": {"fontFamily": "var:preset|font-family|sans", "fontSize": "16px", "lineHeight": "1.65"}
+  }
+}
