@@ -50,3 +50,8 @@ update_option('as_phase2_pages', $pages);
 update_option('page_on_front', $pages['home']);
 update_option('show_on_front', 'page');
 WP_CLI::success('Three local native-block pages created. Phase-1 page preserved.');
+
+// These pages were just created in this request; no existing editor state is replaced.
+require_once '/prototype/shared-parts-lib.php';
+$shared_plan = as_shared_plan();
+as_shared_apply($shared_plan['review_sha256']);
