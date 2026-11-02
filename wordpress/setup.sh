@@ -32,6 +32,7 @@ docker compose run --rm -T cli sh -c '
   fi
   wp eval-file /prototype/seed.php
   wp eval-file /prototype/seed-phase2.php
+  wp eval-file /prototype/migrate-shared-parts.php status
 '
 echo 'Lokaler Prototyp: http://127.0.0.1:8890'
 echo 'Editor: http://127.0.0.1:8890/wp-admin/ — Zugangsdaten ausschließlich in wordpress/.env'

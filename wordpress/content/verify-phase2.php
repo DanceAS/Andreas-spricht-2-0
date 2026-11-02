@@ -40,4 +40,21 @@ function as2_tree($root) {
     return $hashes;
 }
 as2_check(as2_tree(get_template_directory()) === as2_tree('/usr/src/wordpress/wp-content/themes/twentytwentyfive'), 'Parent modified.');
-echo wp_json_encode(array('wordpress' => get_bloginfo('version'), 'parent' => wp_get_theme('twentytwentyfive')->get('Version'), 'php' => PHP_VERSION, 'blocks' => $counts, 'assets' => count($media), 'active_plugins' => 0, 'original_media_unchanged' => true, 'parent_unchanged' => true, 'local_only' => true)) . PHP_EOL;
+$shared = get_option('as_shared_parts_v1');
+$part_counts = array();
+if ($shared) {
+    foreach ($shared['parts'] as $slug => $id) {
+        $count = 0; $visit(parse_blocks(get_post_field('post_content', $id))); $part_counts[$slug] = $count;
+        as2_check(get_post_type($id) === 'wp_template_part', 'Wrong central entity type.');
+        as2_check(has_term(get_stylesheet(), 'wp_theme', $id), 'Part not owned by child theme.');
+    }
+    foreach ($pages as $id) {
+        $html = get_post_field('post_content', $id);
+        as2_check(!preg_match('/<(?:header|footer)\b/', $html), 'Embedded duplicate header/footer.');
+    }
+    foreach (array('front-page', 'page', 'index') as $slug) {
+        $template = get_block_template(get_stylesheet() . '//' . $slug, 'wp_template');
+        as2_check(substr_count($template->content, 'wp:template-part') === 2, 'Template must reference two central parts.');
+    }
+}
+echo wp_json_encode(array('wordpress' => get_bloginfo('version'), 'parent' => wp_get_theme('twentytwentyfive')->get('Version'), 'php' => PHP_VERSION, 'blocks' => $counts, 'shared_parts' => $part_counts, 'assets' => count($media), 'active_plugins' => 0, 'original_media_unchanged' => true, 'parent_unchanged' => true, 'local_only' => true)) . PHP_EOL;
