@@ -1,0 +1,43 @@
+# LOCAL TEST ONLY. Never upload/run this on ALL-INKL. See ../TEST-REPORT.md.
+name: andreas-spricht-issue14
+services:
+  db:
+    image: mariadb:10.6.23@sha256:78f6411897a1971b6b55b975cda6ff6fea1e405d10f500451662cfc08699d709
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: ${WP_DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${WP_DB_ROOT_PASSWORD}
+    volumes:
+      - database:/var/lib/mysql
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+  app:
+    image: wordpress:cli-php8.4@sha256:807d746b7122d004c3d3768d77f221acedbd17b98ffe9646a9388627a36cdbc7
+    user: '33:33'
+    working_dir: /var/www/html
+    command: [php, -S, '0.0.0.0:8080', /router.php]
+    ports: ['127.0.0.1:8890:8080']
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      WORDPRESS_DB_PASSWORD: ${WP_DB_PASSWORD}
+      WP_ADMIN_USER: ${WP_ADMIN_USER}
+      WP_ADMIN_PASSWORD: ${WP_ADMIN_PASSWORD}
+      HOME: /tmp
+    volumes:
+      - site:/var/www/html
+      - ${AS_CORE_DIR:?Set extracted official core path}:/core:ro
+      - ./local-config.php:/var/www/html/wp-config.php:ro
+      - ./router.php:/router.php:ro
+      - ../../theme/andreas-spricht-bordeaux:/var/www/html/wp-content/themes/andreas-spricht-bordeaux:ro
+      - ../../content:/prototype:ro
+      - ../../.local-assets:/reference-assets:ro
+      - ..:/staging:ro
+volumes:
+  database:
+  site:

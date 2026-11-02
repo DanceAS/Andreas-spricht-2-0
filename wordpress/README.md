@@ -1,5 +1,7 @@
 # Bordeaux in WordPress – zentrale Header/Footer
 
+**Phase 3 / Issue #14:** [ALL-INKL-Staging vorbereiten](staging/README.md), [spätere Domainumstellung und Rückfall](staging/CUTOVER.md), [Versions-/Paketprüfbericht](staging/TEST-REPORT.md). Nur Vorbereitung und PR; noch keine Hostingfreigabe. Die nachfolgende Anleitung beschreibt weiterhin die isolierte lokale Entwicklung.
+
 ## Vereinbart
 
 Issue #12 ergänzt die vollständige lokale Migration aus PR #11 um zentrale Template-Teile. Referenz: `bordeaux/` auf main `502644c` (unverändert). Verbindlich: Twenty Twenty-Five als unveränderter Parent, kein Pagebuilder, alle redaktionellen Inhalte in nativen Gutenberg-Blöcken und der Mediathek. Nur Feature-Branch und PR, kein Merge oder Deployment. Bestehende statische Website und angefangene ALL-INKL-WordPress-Installation bleiben unberührt.
@@ -135,7 +137,7 @@ Bei späteren Änderungen wird der automatische Rückbau verweigert; dann aktuel
 Noch **keine** Freigabe zur Veröffentlichung. Separat erforderlich:
 
 1. Aktuelle unterstützte WordPress-/PHP-/Datenbankversion und passendes Twenty Twenty-Five festlegen; auf diesem Stand alle Editor- und Frontendtests wiederholen. Testdaten/Benutzer und lokale Sperr-/Debugkonfiguration nicht ungeprüft übernehmen.
-2. Erst nach eigener Erlaubnis bestehende ALL-INKL-Installation, Datenbank, Plugins, Zugriffsrechte und Backups prüfen. Ihr Zustand ist weiterhin unbekannt. Keine Annahme, dass der lokale Stand dort bereits funktioniert.
+2. Erst nach eigener Erlaubnis bestehende ALL-INKL-Installation, Datenbank, Plugins, Zugriffsrechte und Backups prüfen. Der gemeldete Zustand aus Issue #14 ist im Stagingplan erfasst; ein eigener Hostingbefund liegt weiterhin nicht vor. Keine Annahme, dass der lokale Stand dort bereits funktioniert.
 3. Getrennte Hosting-Testumgebung mit HTTPS und funktionierenden Medien-/Byte-Range-Antworten; Uploadlimits für Originalbilder/MP3s sowie Speicher-, PHP- und Datenbankrechte prüfen. Es gibt keine Hosting-Zugangsdaten oder Deployment-Automatik in diesem PR.
 4. Standardmäßige WordPress-Migration von Datenbank, Uploads und Child-Theme planen; URLs/Seitenverweise fachgerecht an die genehmigte Test-URL anpassen. WordPress, Parent-Theme und Uploads dürfen nicht allein durch Kopieren dieses Child-Themes ersetzt werden.
 5. Auf dem echten Hosting Texte, Bilder, MP3s, Cover, Status, Beschreibung, Links und rechtliche Seiten im Editor ändern/speichern und Frontend prüfen; eingeschränkte Redakteursrolle separat testen.
