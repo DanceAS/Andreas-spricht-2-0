@@ -6,19 +6,22 @@ const cp = require("node:child_process");
 const assert = require("node:assert/strict");
 const root = path.resolve(__dirname, "../.."),
   origin = "http://127.0.0.1:8890";
-const out = path.join(root, "work/issue-12");
+const out = path.resolve(root, process.env.AS_TEST_OUTPUT || "work/issue-12");
 const option = (name) =>
   JSON.parse(
     cp.execFileSync(
       "docker",
       [
         "compose",
+        ...(process.env.AS_TEST_ENV_FILE
+          ? ["--env-file", process.env.AS_TEST_ENV_FILE]
+          : []),
         "-f",
-        "wordpress/compose.yml",
+        process.env.AS_TEST_COMPOSE || "wordpress/compose.yml",
         "run",
         "--rm",
         "-T",
-        "cli",
+        process.env.AS_TEST_SERVICE || "cli",
         "wp",
         "option",
         "get",
@@ -135,7 +138,10 @@ const option = (name) =>
       await p.getByLabel("Text", { exact: true }).fill(text);
       await p
         .locator(".block-editor-link-control")
-        .getByRole("button", { name: "Save", exact: true })
+        .getByRole("button", {
+          name: process.env.AS_TEST_LINK_CONFIRM || "Save",
+          exact: true,
+        })
         .click();
       await p.keyboard.press("Escape");
     }
