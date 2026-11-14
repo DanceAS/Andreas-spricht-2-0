@@ -1,0 +1,29 @@
+# Sicherheits- und Wiederanlaufmodell
+
+Dies ist ein befristetes Administrationswerkzeug, keine dauerhafte Laufzeitabhängigkeit. Als Plugin-ZIP erhält es beim Aktivieren normalen PHP-Zugriff innerhalb der vorhandenen WordPress-Installation; es muss deshalb wie jedes Plugin vor Installation geprüft/freigegeben werden. Das Paket enthält keinen Webinstaller, keine Zugangsdaten und keine Remote-Download-/Updatefunktion.
+
+## Zugriff und Paket
+
+- Ausschließlich `wp_ajax_as_i16`, kein `nopriv`-, REST-, Cron- oder öffentlicher Import-Endpunkt. Pluginaktivierung selbst importiert nichts.
+- Jeder schreibende Request prüft Adminrolle, erforderliche Fähigkeiten, Single-Site, gespeicherte und wirksame Home-/SiteURL, Request-Host und HTTPS; anschließend WordPress-Nonce. Nur `start` und `next` sind erlaubt. `start` benötigt Checkbox und Hash des aktuell angezeigten Plans. `next` benötigt einen zuvor bestätigten Import und dieselbe Administrator-ID. Ein anderer Admin muss erst selbst die Vorprüfung bestätigen.
+- SHA-256 des geschützten `payload.php` ist in den gebauten PHP-Code eingebettet. Das Payload beginnt mit PHP-`exit`, wird nie als Code eingebunden. Fest erlaubte sieben Mediennamen und 17 Theme-Dateien; Originalhashes, Größe, JPG-Dekodierbarkeit und WordPress-Dateityp/MIME-Prüfung. Theme-PHP liegt als Base64-Daten im Payload, nicht als unmittelbar ausführbare lose Kopie unter dem Pluginpfad.
+- Keine benutzerübergebenen Dateipfade, URLs, ZIPs oder SQL-Tabellennamen an den Importer. Der WordPress-Admin übernimmt die einmalige Installation des vollständigen Plugin-ZIP. Seiten-/Attachment-IDs und Medien-URLs werden im Ziel ermittelt, nicht aus der Quelldatenbank übernommen.
+- Alle Meldungen/Bestandsanzeigen sind HTML-maskiert, Status im JS wird als `textContent` ausgegeben. Kein `eval`, kein Ausführen von Nutzereingaben. Native redaktionelle Blöcke aus dem geprüften Paket, keine Custom-HTML-Blöcke oder eigenen Blocktypen.
+
+## Bestands- und Fehlerschutz
+
+Die Vorprüfung zeigt vorhandene IDs, Seiten-/Mediennamen, aktives Pluginset und geplante Optionen. Sie blockiert vorhandene Vorlagen/Teile/Global Styles, gleichnamiges fremdes Child, reservierte Slugs, vorhandene Bordeaux-Zuordnungen, abweichende Pfade und nicht transaktionale Tabellen. Persistenter Objektcache wird gesperrt, damit nach einem Prozessabbruch keine unbestätigten Transaktionswerte aus einem externen Cache gelesen werden. Es gibt keinen automatischen Reset oder Lösch-/Überschreibmodus.
+
+Ein Fingerprint der alten Seiten/Medien/Overrides samt Metadaten, Theme-/Startseiten-/Datenschutz-/URL-/Permalink-/Pluginoptionen schützt gegen Änderungen zwischen Bestätigung und einem folgenden Schritt. Importobjekte besitzen Herkunftsmetadaten und nach jedem gespeicherten Schritt eigene Signaturen. Ein zwischenzeitlich bearbeitetes Objekt wird nicht erneut beschrieben. Vollständig abgeschlossene Importe schreiben bei erneutem Aufruf überhaupt keine importierten Inhalte oder Zuordnungen mehr.
+
+Pro Request verhindert ein MariaDB/MySQL-Named-Lock parallele Importtransaktionen. Core-Posts, Metadaten, Terme und Fortschritt werden pro Schritt zusammen in einer InnoDB-Transaktion gespeichert. Fehler rollen diesen DB-Schritt zurück und leeren den WordPress-Cache; die vorherigen Schritte bleiben bestehen. Ein nach Verbindungsabbruch bereits bestätigter Schritt wird beim Wiederanlauf nicht wiederholt. Nach serverseitigem Prozessende gibt die DB-Verbindung ihren Named-Lock frei.
+
+Der Filesystemteil ist **nicht** transaktional: Das Theme wird zunächst in einem dem Import zugeordneten temporären Verzeichnis aufgebaut, geprüft und erst dann umbenannt. Originalmedien erhalten einen eindeutigen Import-Unterordner. Eine bereits kopierte identische Originaldatei wird nach fehlgeschlagenem Registrierungsschritt wiederverwendet; abweichende Dateien werden gesperrt. Attachment-Registrierung und aufwendige Bild-/Audio-Metadatenverarbeitung sind getrennte Schritte: Nach einem Abbruch der Bildaufbereitung bleibt die bereits registrierte ID verwendbar. WordPress-generierte eigene Bildvarianten können nach einem Fehler im eigenen Importordner verbleiben. Es wird kein allgemeiner Upload-/Theme-Cleanup durchgeführt.
+
+Die letzte Transaktion veröffentlicht ausschließlich die drei neuen Seiten, setzt ausschließlich die neuen Bordeaux-Maps und zugehörigen Startseiten-/Datenschutzwerte und aktiviert das neue Child über WordPress. Bestehende Seite/Medien, Parentdateien, andere Plugins, Sprache, Permalinks und Suchmaschinen-Sichtbarkeit werden nicht ersetzt. WordPress-/Drittplugin-Hooks können zusätzliche, nicht vom Importer kontrollierte Effekte haben; DB-Transaktionen sind keine Garantie für Rollback externer E-Mails, Dateien, Caches oder Hooks.
+
+## Nach Erfolg und verbleibende Grenzen
+
+Das Plugin kann über die normale Pluginverwaltung deaktiviert und gelöscht werden. Es gibt keinen Uninstall-Hook, der Inhalte, Medien, Theme oder Marker entfernt. Das Protokoll enthält IDs, Signaturen, Paketkennung und frühere Zuordnungswerte, aber keine alten vollständigen redaktionellen Texte, Passwörter oder Datenbankzugänge. Keine dauerhafte Abhängigkeit vom Plugin für das Frontend oder den Editor.
+
+Ein kompromittierter Administrator oder ein Angreifer mit Schreibzugriff auf Plugin-/Theme-/DB-Dateien ist außerhalb dieses Schutzmodells; solche Rechte erlauben ohnehin beliebigen PHP-/DB-Zugriff. Die Prüfsummen ersetzen keine externe Signatur/Vertrauenskette. Hosting-/PHP-Limits, Sicherheitsplugins, MU-Plugins, fremde Hooks und echte Browser/SSL-/Audioantworten erfordern nach Freigabe eigene Stagingabnahme. Automatischer Rückbau einer teilweise durchgeführten Installation ist absichtlich nicht enthalten.

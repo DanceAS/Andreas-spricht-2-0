@@ -1,0 +1,15 @@
+{
+  "file": "wordpress/staging/admin-import/dist/andreas-staging-import.zip",
+  "sha256": "3f041e6c04c4a5ae68faed6b110b92cb6e652bbf25ac6fbba0c90cc0819d4fe6",
+  "bytes": 9188744,
+  "local_test_only": false,
+  "payload_sha256": "24eed665f24390c508021319340cbb7494fbdd0f79417d747165b0780a2d2313",
+  "sourceCommit": "2da92f5bee578beaef7ef75e07ed485ae8660608",
+  "sourceJsonSHA256": "8515b3ee737d10cd3f78d188b5796678a30ff42d30ad2937c8f8f3a10127b6bb",
+  "runtimeSourceSHA256": {
+    "plugin/admin.js": "db31026952ed2c92cdacf11fecbc8a43894c87cf55c250271238120823a3996f",
+    "plugin/andreas-staging-import.php": "86eb3ce198e3286891ecf046dfbb489a92334031b76b96732b7656771247215f",
+    "plugin/includes/importer.php": "885ec392ce184dc3372a5ca1f82fa70a579408f1b38ee2a5e1dfec3c477245ae"
+  },
+  "builderSHA256": "19bbbe4331011c0e804d19ac12f9c878710015a638f5bd8fa1a61a2749df5c4a"
+}

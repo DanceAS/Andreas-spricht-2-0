@@ -1,0 +1,431 @@
+{
+  "dateEuropeBerlin": "2026-11-14",
+  "baseCommit": "2da92f5bee578beaef7ef75e07ed485ae8660608",
+  "hostingAccess": false,
+  "deployment": false,
+  "productionBuild": {
+    "file": "wordpress/staging/admin-import/dist/andreas-staging-import.zip",
+    "sha256": "3f041e6c04c4a5ae68faed6b110b92cb6e652bbf25ac6fbba0c90cc0819d4fe6",
+    "bytes": 9188744,
+    "local_test_only": false,
+    "payload_sha256": "24eed665f24390c508021319340cbb7494fbdd0f79417d747165b0780a2d2313",
+    "sourceCommit": "2da92f5bee578beaef7ef75e07ed485ae8660608",
+    "sourceJsonSHA256": "8515b3ee737d10cd3f78d188b5796678a30ff42d30ad2937c8f8f3a10127b6bb",
+    "runtimeSourceSHA256": {
+      "plugin/admin.js": "db31026952ed2c92cdacf11fecbc8a43894c87cf55c250271238120823a3996f",
+      "plugin/andreas-staging-import.php": "86eb3ce198e3286891ecf046dfbb489a92334031b76b96732b7656771247215f",
+      "plugin/includes/importer.php": "885ec392ce184dc3372a5ca1f82fa70a579408f1b38ee2a5e1dfec3c477245ae"
+    },
+    "builderSHA256": "19bbbe4331011c0e804d19ac12f9c878710015a638f5bd8fa1a61a2749df5c4a"
+  },
+  "localTestBuild": {
+    "file": "work/issue-16/checked-LOCAL-TEST.zip",
+    "sha256": "a99a5811618247d6824aff5aedfa91704f709d9cfb643778b3fc2dbd4127ed57",
+    "bytes": 9188746,
+    "local_test_only": true,
+    "payload_sha256": "24eed665f24390c508021319340cbb7494fbdd0f79417d747165b0780a2d2313"
+  },
+  "runtimeVerificationAfterDeletion": {
+    "wordpress": "7.1.4",
+    "parent": "1.5",
+    "php": "8.4.27",
+    "db": "10.6.23",
+    "blocks": {
+      "home": 94,
+      "impressum": 13,
+      "datenschutz": 90,
+      "header": 8,
+      "footer": 10
+    },
+    "sevenOriginalsAndExistingMediaUnchanged": true,
+    "seventeenChildFilesAndParentUnchanged": true,
+    "oldPagePreserved": true,
+    "importerDeleted": true,
+    "otherActivePlugins": [
+      "antispam-bee-2.11.9/antispam_bee.php"
+    ],
+    "frontAndPrivacyCorrect": true,
+    "blog_public": "0"
+  },
+  "apache": "2.4.69 Debian",
+  "chromium": "154.0.8037.57",
+  "images": {
+    "wordpress": "wordpress:7.1.4-php8.4-apache@sha256:63dbbdf2c9ea29a2e4f417c0d4e7c4b821725d115127f70838dbbc5051ee4db0",
+    "mariadb": "mariadb:10.6.23@sha256:78f6411897a1971b6b55b975cda6ff6fea1e405d10f500451662cfc08699d709",
+    "cli": "wordpress:cli-php8.4@sha256:807d746b7122d004c3d3768d77f221acedbd17b98ffe9646a9388627a36cdbc7"
+  },
+  "adminFlow": {
+    "productionZipRejectsLocalhostWithoutMutation": true,
+    "nonceConsentStalePreviewAndNoStartGuards": true,
+    "anonymousAndEditorDenied": true,
+    "conflictsVisibilityOverridesChildOptionsAndTamperProtected": true,
+    "interruptedMediaStepResumesSameIdAndConcurrentEditBlocks": true,
+    "completedRepeatDoesNotDuplicateOrOverwrite": true,
+    "nativeMaps": {
+      "pages": {
+        "home": 24,
+        "impressum": 25,
+        "datenschutz": 26
+      },
+      "parts": {
+        "header": 30,
+        "footer": 31
+      },
+      "media": {
+        "andreas-scharrer-8.jpg": 15,
+        "andreas-scharrer-original.jpg": 18,
+        "beim-tanz-des-gefreiten-band-1-frontcover.jpg": 19,
+        "die-geschichte-von-den-watschlawanen-cover.jpg": 20,
+        "hoerprobe-kap1-kurz.mp3": 21,
+        "hoerprobe-letzte-vorstellung.mp3": 22,
+        "hoerprobe-watschlawanen-kapitel-4.mp3": 23
+      }
+    },
+    "activePluginsPreserved": true
+  },
+  "finalFaultRepeat": {
+    "finalProductionZipDomainGuardVerified": true,
+    "wrongRequestHostAndPersistentCacheBlocked": true,
+    "existingAttachmentSlugConflictBlocked": true,
+    "nativeAdminCoreFailureKeepsCursor16": true,
+    "termFailureRollsBackNewPartAndKeepsCursor21": true,
+    "earlierSevenMediaAndDraftHomePreserved": true,
+    "ownedEditorChangeBlocksWithoutOverwrite": true,
+    "parallelNamedLockRejectsWithoutAdvancing": true,
+    "resumeFinishesExactlyThreePagesTwoPartsSevenMedia": true
+  },
+  "contentEditor": {
+    "pages": {
+      "home": {
+        "validBefore": 94,
+        "validAfterReload": 94,
+        "restored": true
+      },
+      "impressum": {
+        "validBefore": 13,
+        "validAfterReload": 13,
+        "restored": true
+      },
+      "datenschutz": {
+        "validBefore": 90,
+        "validAfterReload": 90,
+        "restored": true
+      }
+    },
+    "homeChecks": [
+      "text-heading-genre-about-author-status-description-contact",
+      "hero-and-book-cover-replaced-via-media",
+      "mp3-replaced-via-core-audio-and-plays",
+      "book-cta-link-text-and-url"
+    ],
+    "restored": true
+  },
+  "siteEditorAfterDeletion": {
+    "header": {
+      "frontendPages": [
+        "home",
+        "impressum",
+        "datenschutz"
+      ],
+      "validBlocksAfterReload": 8,
+      "restoredOnAllPages": [
+        "home",
+        "impressum",
+        "datenschutz"
+      ]
+    },
+    "footer": {
+      "frontendPages": [
+        "home",
+        "impressum",
+        "datenschutz"
+      ],
+      "validBlocksAfterReload": 10,
+      "restoredOnAllPages": [
+        "home",
+        "impressum",
+        "datenschutz"
+      ]
+    }
+  },
+  "pluginRemoval": {
+    "adminDeactivatedDeleted": true,
+    "allImportedObjectsAndMappingsPreserved": true,
+    "reinstalledCompletedDoesNotOverwriteLaterNativeEditorEdit": true,
+    "secondDeletionAndNativeEditorRestoration": true,
+    "threeMp3ByteRanges206WithoutPlugin": true
+  },
+  "offlineBuildTests": {
+    "byteReproducible": true,
+    "overwriteRefused": true,
+    "productionOriginFixed": true,
+    "protectedPayloadHashMatches": true,
+    "onlyElevenWhitelistedZipMembers": true,
+    "unchangedThemeAndOriginalMedia": true,
+    "noCredentialsTestsOrWpConfig": true,
+    "separateLocalOnlyArtifact": true,
+    "traversalRefused": true,
+    "modifiedOriginalRefused": true,
+    "unmappedReferenceUrlRefused": true
+  },
+  "browsersAfterDeletion": [
+    {
+      "width": 320,
+      "maxGeometryDeltaPx": 0.09375,
+      "differences": [],
+      "threeAudioPlayPauseSeek": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=25",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 780.140625,
+          "referenceHeight": 780.140625
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=26",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 19348.609375,
+          "referenceHeight": 19348.609375
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 375,
+      "maxGeometryDeltaPx": 0.09375,
+      "differences": [],
+      "threeAudioPlayPauseSeek": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=25",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 780.140625,
+          "referenceHeight": 780.140625
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=26",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 16562.78125,
+          "referenceHeight": 16562.78125
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 390,
+      "maxGeometryDeltaPx": 0.09375,
+      "differences": [],
+      "threeAudioPlayPauseSeek": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=25",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 752.09375,
+          "referenceHeight": 752.09375
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=26",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 16029.890625,
+          "referenceHeight": 16029.890625
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 430,
+      "maxGeometryDeltaPx": 0.09375,
+      "differences": [],
+      "threeAudioPlayPauseSeek": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=25",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 752.09375,
+          "referenceHeight": 752.09375
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=26",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 14737.71875,
+          "referenceHeight": 14737.71875
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 820,
+      "maxGeometryDeltaPx": 0.015625,
+      "differences": [],
+      "threeAudioPlayPauseSeek": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=25",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 805.03125,
+          "referenceHeight": 805.03125
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=26",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 10347.328125,
+          "referenceHeight": 10347.328125
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 1024,
+      "maxGeometryDeltaPx": 0.0,
+      "differences": [],
+      "threeAudioPlayPauseSeek": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=25",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 833.671875,
+          "referenceHeight": 833.671875
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=26",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 9196.921875,
+          "referenceHeight": 9196.921875
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 1366,
+      "maxGeometryDeltaPx": 0.0,
+      "differences": [],
+      "threeAudioPlayPauseSeek": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=25",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 852.15625,
+          "referenceHeight": 852.15625
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=26",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 9218.75,
+          "referenceHeight": 9218.75
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 1440,
+      "maxGeometryDeltaPx": 0.0,
+      "differences": [],
+      "threeAudioPlayPauseSeek": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=25",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 852.15625,
+          "referenceHeight": 852.15625
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=26",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 9218.75,
+          "referenceHeight": 9218.75
+        }
+      ],
+      "jsErrors": []
+    }
+  ],
+  "additionalReferenceAndFaultProjectsRemoved": true,
+  "mainIsolatedTargetRestored": true,
+  "codeSHA256": {
+    "wordpress/staging/admin-import/build-plugin.py": "19bbbe4331011c0e804d19ac12f9c878710015a638f5bd8fa1a61a2749df5c4a",
+    "wordpress/staging/admin-import/plugin/admin.js": "db31026952ed2c92cdacf11fecbc8a43894c87cf55c250271238120823a3996f",
+    "wordpress/staging/admin-import/plugin/andreas-staging-import.php": "86eb3ce198e3286891ecf046dfbb489a92334031b76b96732b7656771247215f",
+    "wordpress/staging/admin-import/plugin/includes/importer.php": "885ec392ce184dc3372a5ca1f82fa70a579408f1b38ee2a5e1dfec3c477245ae",
+    "wordpress/staging/admin-import/tests/admin.cjs": "9e7970c906f697195a5d911e117638c959eb56128524d9b1c8a08b621c6a49d4",
+    "wordpress/staging/admin-import/tests/build.py": "4f7267c54e5f26dc0364a8a6c39c6ba4b7ee86f25115b45dc4d9773b3e857c38",
+    "wordpress/staging/admin-import/tests/compose.yml": "1dd643b74dc53a3e7b7855fdff85aeaffd4977fd8f35cb83a0ff9af34f7ec0b4",
+    "wordpress/staging/admin-import/tests/content-editor.cjs": "fc3ff3ae105e5f3682bc4c7099b51d514cdafc34c19cc61edcdabffb979a2ed9",
+    "wordpress/staging/admin-import/tests/fault.cjs": "688310cccf4c3c1cf375db4170d16214094f3aa82bb051469408039c23633498",
+    "wordpress/staging/admin-import/tests/remove.cjs": "baa25cf527422cd9abddcd84a8e6e6a917ba1a22d87f27388948f3bcc450b0d0",
+    "wordpress/staging/admin-import/tests/setup-fixture.php": "11f66a8d3e3ebcac07453128b61fb7026c5b05e637419a56d475cc3df056f610",
+    "wordpress/staging/admin-import/tests/verify.php": "32e727137db0efa0474ce55ec4ff9f5de8679d8d4b17a99466b0ee967da65656",
+    "wordpress/tests/shared-site.cjs": "0f3eeb9a09fbda143a41ed0b54bf67302e22b0158c7948f0545e83c6c04a1e52",
+    "wordpress/tests/site-editor-shared.cjs": "cdb687b6e08cada827ea621473d91d3a4a27c697999b288b4ee872fcc294ad17"
+  }
+}

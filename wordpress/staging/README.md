@@ -1,5 +1,7 @@
 # Phase 3 – ALL-INKL-Staging vorbereiten
 
+**Aktualisierung Issue #16:** Der Tarif enthält laut Andreas keinen SSH-Zugang. Der neue [WordPress-Admin-Einmalimport](admin-import/README.md) mit einem temporären ZIP-Plugin ersetzt die folgenden SSH-/WP-CLI-Installationsschritte für Andreas. Noch keine Hostingfreigabe; der ursprüngliche Plan und seine Nachweise bleiben nachvollziehbar.
+
 Stand: 2. November 2026. Auftrag: [Issue #14](https://github.com/DanceAS/Andreas-spricht-2-0/issues/14), Ausgangspunkt main `b4fa624` mit gemergtem PR #13. AGENTS.md bleibt verbindlich. Dieses Verzeichnis bereitet die Installation vor; **es installiert nichts bei ALL-INKL**. Keine Freigabe zum Merge, Deployment oder Domainwechsel.
 
 ## Für Andreas: wenige Schritte, erst nach Freigabe
@@ -10,7 +12,7 @@ Stand: 2. November 2026. Auftrag: [Issue #14](https://github.com/DanceAS/Andreas
 4. **Gemeinsam abnehmen:** `https://neu.andreasspricht.de/` in Safari auf iPhone/iPad und am Desktop öffnen; drei Hörproben und die Bearbeitung in WordPress testen. Erst dann entscheiden, ob der Entwurf übernommen wird. Der Suchmaschinenschutz bleibt aktiv; für vertraulichen Zugriff gegebenenfalls zusätzlich einen Hosting-Verzeichnisschutz einrichten (gesonderte Freigabe).
 5. **Live-Wechsel separat freigeben:** Der [Umstellungs-/Rückfallplan](CUTOVER.md) ist ein eigener späterer Auftrag. Staging-Freigabe bedeutet keine Freigabe zur Domainumstellung.
 
-Du brauchst auf dem iPad weder Node.js noch Docker. Technische Paketvorbereitung und Import übernimmt der Ausführende. Auch auf dem Shared Hosting werden Docker, Node.js und Python nicht benötigt; Python läuft nur offline beim Ausführenden. SSH/WP-CLI-Verfügbarkeit muss noch bestätigt werden. Ohne WP-CLI wird nicht improvisiert: siehe manuelle Alternative im Operatorplan.
+Du brauchst auf dem iPad weder Node.js noch Docker. Technische Paketvorbereitung und Import übernimmt der Ausführende. Auch auf dem Shared Hosting werden Docker, Node.js und Python nicht benötigt; Python läuft nur offline beim Ausführenden. SSH steht im gewählten Tarif nicht zur Verfügung. Verwende nach Freigabe den neuen [Admin-Einmalimport](admin-import/README.md), nicht die früheren WP-CLI-Schritte.
 
 ## Bekannt, gemeldet und noch zu bestätigen
 
@@ -31,7 +33,7 @@ Die folgenden Hosting-Angaben stammen aus Issue #14 / dem Website-Zustandsberich
 - Tatsächliche Werte `home`, `siteurl`, Permalinkstruktur, Startseiten-/Datenschutzzuordnung, ggf. `WP_HOME`/`WP_SITEURL` in wp-config. Zusätzliche Upload-URL-/Pfadkonstanten, Multisite, Objektcache, MU-Plugins, Rewrite-/HTTPS-Regeln und Weiterleitungen prüfen.
 - Existieren gespeicherte `wp_template`, `wp_template_part`, `wp_global_styles`, Seiten-Templatezuweisungen oder weitere Inhalte? Der alte Versuch darf später ersetzt werden; das ist keine pauschale Freigabe zum Löschen unbekannter Daten. Bei abweichender Bestandsaufnahme stoppen und Entscheidung einholen.
 - PHP-Version **für die Webdomain und CLI**, Speicherlimit, Laufzeitlimit, freie Platte/Inodes, Schreibrechte im Uploadverzeichnis; MariaDB-Engine/Zeichensatz/Collation; GD/Imagick, MP3-MIME-Upload und tatsächliche maximale Datei-/Requestgröße.
-- SSH/WP-CLI nutzbar? Wer kann die später genehmigten Befehle ausführen? Wenn nicht verfügbar: Installation über Admin/SFTP und separat geprüfter nativer Importweg vereinbaren. Kein Rootzugriff erforderlich.
+- SSH fehlt nach bestätigter Tarifprüfung. Direkten ZIP-Upload und Schreibrechte über WordPress-Admin für den neuen Einmalimport prüfen; kein Tarifupgrade oder Rootzugriff erforderlich.
 - Ist ein technischer Datei-/DB-Wiederherstellungspunkt für den späteren Live-Wechsel verfügbar? Aufbewahrung/Restorezeit prüfen. Dies ist unabhängig vom ausdrücklich nicht gewünschten Archiv des alten redaktionellen Versuchs. Keine Kopie einer gesamten Hosting-Datenbank ungeprüft durch die lokale Entwicklungsdatenbank ersetzen.
 - Soll `www` dauerhaft auf Apex weiterleiten (hier empfohlen)? Bestehende URL-Pfade der statischen Seite und externe Links für die Redirectliste liefern. Zuständigkeit und Testfenster bestätigen.
 

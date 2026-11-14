@@ -1,5 +1,7 @@
 # Bordeaux in WordPress – zentrale Header/Footer
 
+**Issue #16 / ohne SSH:** [Einmalimport über WordPress-Admin](staging/admin-import/README.md), [Prüfbericht](staging/admin-import/TEST-REPORT.md). Temporäres ZIP-Plugin, anschließend vollständig entfernbar. Nur Entwicklung und PR, keine Hostingfreigabe.
+
 **Phase 3 / Issue #14:** [ALL-INKL-Staging vorbereiten](staging/README.md), [spätere Domainumstellung und Rückfall](staging/CUTOVER.md), [Versions-/Paketprüfbericht](staging/TEST-REPORT.md). Nur Vorbereitung und PR; noch keine Hostingfreigabe. Die nachfolgende Anleitung beschreibt weiterhin die isolierte lokale Entwicklung.
 
 ## Vereinbart
