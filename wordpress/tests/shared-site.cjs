@@ -5,7 +5,7 @@ const { chromium, webkit } = require("playwright"),
   path = require("node:path"),
   assert = require("node:assert/strict");
 const root = path.resolve(__dirname, "../.."),
-  out = path.join(root, "work/issue-12");
+  out = path.resolve(root, process.env.AS_TEST_OUTPUT || "work/issue-12");
 const server = http.createServer(async (req, res) => {
   try {
     const relative =

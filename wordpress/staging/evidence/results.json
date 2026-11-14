@@ -1,0 +1,454 @@
+{
+  "reviewDateEuropeBerlin": "2026-11-02",
+  "baseCommit": "b4fa624958492d91365c89aef251e3b6da23cd64",
+  "hostingAccess": false,
+  "completeSharedHostingImportTest": false,
+  "runtime": {
+    "wordpress": "7.1.4",
+    "php_cli": "8.4.27",
+    "db_server": "10.6.23",
+    "language": "en_US",
+    "parent_version": "1.5",
+    "plugins": []
+  },
+  "webServer": "PHP CLI built-in server with local-only MP3 range router; NOT Apache",
+  "officialCore": {
+    "url": "https://codeload.github.com/WordPress/WordPress/tar.gz/refs/tags/7.1.4",
+    "tagCommit": "db96f5eaa77a8d3e8eec8923a518fa2326f0d46a",
+    "sha256": "3029254c9059f2c16d16818a6ee48bf1c321cc8fb354cca57645bd6469ad25a3"
+  },
+  "images": {
+    "php": "wordpress:cli-php8.4@sha256:807d746b7122d004c3d3768d77f221acedbd17b98ffe9646a9388627a36cdbc7",
+    "mariadb": "mariadb:10.6.23@sha256:78f6411897a1971b6b55b975cda6ff6fea1e405d10f500451662cfc08699d709"
+  },
+  "packageTests": {
+    "tests": {
+      "repeat_build_refused": true,
+      "all_native_id_attributes_and_five_documents_mapped": true,
+      "url_json_and_html_escaping_correct": true,
+      "child_zip_byte_identical_no_core_config_or_plugins": true,
+      "live_target_refused": true,
+      "mixed_origins_refused": true,
+      "duplicate_ids_refused": true,
+      "tampered_package_refused": true,
+      "invalid_inputs_leave_no_rendered_output": true,
+      "modified_original_refused": true
+    }
+  },
+  "readOnlyInventoryTest": {
+    "six_tables_unchanged": true,
+    "inventory_versions": {
+      "wordpress": "7.1.4",
+      "php_cli": "8.4.27",
+      "db_server": "10.6.23",
+      "parent_version": "1.5"
+    }
+  },
+  "originals": {
+    "seven_originals_unchanged": true,
+    "parent_byte_identical": true
+  },
+  "defaultParts": {
+    "native_file_patterns_render": true,
+    "reset_default_links_resolved": true
+  },
+  "bodyPreservation": {
+    "allThreeBodiesUnchangedFromReviewedInput": true,
+    "bodySHA256": {
+      "home": "8488686f3ab76bf3cdb680dddc1196e42a2b57b1f59b11e066fc53d6dae6c313",
+      "impressum": "bf92f1bf20cb263f246ceab9a2094c1dbc0142e5760eaa4813dc853a6ad92a47",
+      "datenschutz": "4adc83f374478794787e68cf0383cbf2042f3cc21baa6d7ca6d946d9f6a42d1e"
+    }
+  },
+  "links": {
+    "amazon_links_correct_and_new_tab": true
+  },
+  "siteEditor": {
+    "header": {
+      "frontendPages": [
+        "home",
+        "impressum",
+        "datenschutz"
+      ],
+      "validBlocksAfterReload": 8,
+      "restoredOnAllPages": [
+        "home",
+        "impressum",
+        "datenschutz"
+      ]
+    },
+    "footer": {
+      "frontendPages": [
+        "home",
+        "impressum",
+        "datenschutz"
+      ],
+      "validBlocksAfterReload": 10,
+      "restoredOnAllPages": [
+        "home",
+        "impressum",
+        "datenschutz"
+      ]
+    }
+  },
+  "browsers": [
+    {
+      "width": 320,
+      "maxGeometryDeltaPx": 0.09375,
+      "comparisonDifferences": [],
+      "threeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=15",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 780.140625,
+          "referenceHeight": 780.140625
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=16",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 19348.609375,
+          "referenceHeight": 19348.609375
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 375,
+      "maxGeometryDeltaPx": 0.09375,
+      "comparisonDifferences": [],
+      "threeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=15",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 780.140625,
+          "referenceHeight": 780.140625
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=16",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 16562.78125,
+          "referenceHeight": 16562.78125
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 390,
+      "maxGeometryDeltaPx": 0.09375,
+      "comparisonDifferences": [],
+      "threeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=15",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 752.09375,
+          "referenceHeight": 752.09375
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=16",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 16029.890625,
+          "referenceHeight": 16029.890625
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 430,
+      "maxGeometryDeltaPx": 0.09375,
+      "comparisonDifferences": [],
+      "threeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=15",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 752.09375,
+          "referenceHeight": 752.09375
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=16",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 14737.71875,
+          "referenceHeight": 14737.71875
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 820,
+      "maxGeometryDeltaPx": 0.015625,
+      "comparisonDifferences": [],
+      "threeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=15",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 805.03125,
+          "referenceHeight": 805.03125
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=16",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 10347.328125,
+          "referenceHeight": 10347.328125
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 1024,
+      "maxGeometryDeltaPx": 0.0,
+      "comparisonDifferences": [],
+      "threeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=15",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 833.671875,
+          "referenceHeight": 833.671875
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=16",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 9196.921875,
+          "referenceHeight": 9196.921875
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 1366,
+      "maxGeometryDeltaPx": 0.0,
+      "comparisonDifferences": [],
+      "threeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=15",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 852.15625,
+          "referenceHeight": 852.15625
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=16",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 9218.75,
+          "referenceHeight": 9218.75
+        }
+      ],
+      "jsErrors": []
+    },
+    {
+      "width": 1440,
+      "maxGeometryDeltaPx": 0.0,
+      "comparisonDifferences": [],
+      "threeAudioPlayPauseSeek": true,
+      "navigation": true,
+      "oneHeaderFooterOnAllPages": true,
+      "legal": [
+        {
+          "label": "Impressum",
+          "url": "http://127.0.0.1:8890/?page_id=15",
+          "heading": "Impressum",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 852.15625,
+          "referenceHeight": 852.15625
+        },
+        {
+          "label": "Datenschutz",
+          "url": "http://127.0.0.1:8890/?page_id=16",
+          "heading": "Datenschutz­erklärung",
+          "wordingUnchanged": true,
+          "identicalSharedHeaderFooter": true,
+          "sharedHeaderStyleMatchesReference": true,
+          "mainHeight": 9218.75,
+          "referenceHeight": 9218.75
+        }
+      ],
+      "jsErrors": []
+    }
+  ],
+  "packageManifest": {
+    "schema": 1,
+    "kind": "source-only-not-an-installer",
+    "source": {
+      "wordpress": "6.8.3",
+      "parent": "1.3"
+    },
+    "assets": {
+      "andreas-scharrer-8.jpg": {
+        "key": "andreas_scharrer_8_jpg",
+        "sha256": "972a9c0012e54c1088d2733d57466608665f8e90a669930c05b4395a9fd318af",
+        "bytes": 2421173,
+        "alt": "Andreas Scharrer – Hörbuchsprecher und Schauspieler",
+        "title": "andreas-scharrer-8-4"
+      },
+      "andreas-scharrer-original.jpg": {
+        "key": "andreas_scharrer_original_jpg",
+        "sha256": "e3cbcb4af4c7ee109dba28b7bab63861d723a3dac78406f04749b3b9ddd9b048",
+        "bytes": 2159252,
+        "alt": "Andreas Scharrer mit einem geöffneten Buch vor einem Studiomikrofon",
+        "title": "andreas-scharrer-original-4"
+      },
+      "beim-tanz-des-gefreiten-band-1-frontcover.jpg": {
+        "key": "beim_tanz_des_gefreiten_band_1_frontcover_jpg",
+        "sha256": "6999b9dec5cbb645ac0723a479b7e687d33e4e8197c44eeabc68b3eacc7a32d0",
+        "bytes": 439906,
+        "alt": "Buchcover: Beim Tanz des Gefreiten – Band I: Aufgalopp von Ernst Scharrer",
+        "title": "beim-tanz-des-gefreiten-band-1-frontcover-3"
+      },
+      "die-geschichte-von-den-watschlawanen-cover.jpg": {
+        "key": "die_geschichte_von_den_watschlawanen_cover_jpg",
+        "sha256": "a8f4ae148b15fe5ccedfed062f88305f4f17d1fbae8d73e590cc49620624c6b5",
+        "bytes": 413684,
+        "alt": "Buchcover: Die Geschichte von den Watschlawanen von Ernst Scharrer",
+        "title": "die-geschichte-von-den-watschlawanen-cover-3"
+      },
+      "hoerprobe-kap1-kurz.mp3": {
+        "key": "hoerprobe_kap1_kurz_mp3",
+        "sha256": "222cddfaa907c498989b9c927b95f85fa1052269499d7ca27f148da679d1da16",
+        "bytes": 592902,
+        "alt": "",
+        "title": "hoerprobe-kap1-kurz-3"
+      },
+      "hoerprobe-letzte-vorstellung.mp3": {
+        "key": "hoerprobe_letzte_vorstellung_mp3",
+        "sha256": "1d36b6b6c5dc8f7bbfd7386cf7e253c5a5ded59066d9b118aa6e7a4020a540d3",
+        "bytes": 1647006,
+        "alt": "",
+        "title": "hoerprobe-letzte-vorstellung-3"
+      },
+      "hoerprobe-watschlawanen-kapitel-4.mp3": {
+        "key": "hoerprobe_watschlawanen_kapitel_4_mp3",
+        "sha256": "d42470f54bf4c667dfddaefb3d57b6a38444f8f27f30b4c88e3fdc126cca83a2",
+        "bytes": 1930750,
+        "alt": "",
+        "title": "hoerprobe-watschlawanen-kapitel-4-3"
+      }
+    },
+    "files": {
+      "CUTOVER.md": "03beadbee87fd65dbba4457b3f834c317c30ed94e36d052f137ce2c12071b4c4",
+      "OPERATOR.md": "f2d7049c00933c0a0376a2012a526569ba5f2fc62ebdb4fe5651049eb2c18320",
+      "README.md": "9bcdea68f79490b094a2891b58d3fd9588476fd3f0ec8bfa0bea4bf4f14c0fba",
+      "andreas-spricht-bordeaux.zip": "81dbdaff5950bb58a766096e0c9c559558b8618254fe3ce41cb8adeb66f055b8",
+      "media/andreas-scharrer-8.jpg": "972a9c0012e54c1088d2733d57466608665f8e90a669930c05b4395a9fd318af",
+      "media/andreas-scharrer-original.jpg": "e3cbcb4af4c7ee109dba28b7bab63861d723a3dac78406f04749b3b9ddd9b048",
+      "media/beim-tanz-des-gefreiten-band-1-frontcover.jpg": "6999b9dec5cbb645ac0723a479b7e687d33e4e8197c44eeabc68b3eacc7a32d0",
+      "media/die-geschichte-von-den-watschlawanen-cover.jpg": "a8f4ae148b15fe5ccedfed062f88305f4f17d1fbae8d73e590cc49620624c6b5",
+      "media/hoerprobe-kap1-kurz.mp3": "222cddfaa907c498989b9c927b95f85fa1052269499d7ca27f148da679d1da16",
+      "media/hoerprobe-letzte-vorstellung.mp3": "1d36b6b6c5dc8f7bbfd7386cf7e253c5a5ded59066d9b118aa6e7a4020a540d3",
+      "media/hoerprobe-watschlawanen-kapitel-4.mp3": "d42470f54bf4c667dfddaefb3d57b6a38444f8f27f30b4c88e3fdc126cca83a2",
+      "pages/datenschutz.html": "02c866bb7dc4cd48e02af937e3aa7176edb6226b4693b04af500549e1dc27641",
+      "pages/home.html": "c66996ab8f43cdca86505557e57119c25956e66df162c2a790afdbc52b61f05c",
+      "pages/impressum.html": "85a293172f774320fc67c5c8ce1f7a9085ca1312c84b6fcc32c62a9d3fa7fb7e",
+      "parts/footer.html": "46986ed4ee7245b8676fef367d99ba361ffffce6cbfce597da8191d5831d2e4a",
+      "parts/header.html": "3a5b3567202b89c3675efd1fc20ff462b8fc9e08c5082cc3b5da6f6b85587766",
+      "preflight.php": "75d60f13470e79c2c3dab5b85a8d448e1cda20138d670dee681da7325f413bce",
+      "render-content.py": "024cf3941f2d503c93685d02845dd8ae644011a5fbd83c36d64c394c74551ae8"
+    }
+  },
+  "codeSHA256": {
+    "wordpress/staging/build-package.py": "260b604ddfef5fede809852604dfb12e86d77c0c7e4bd72d3c5e3355fcea2af6",
+    "wordpress/staging/export-local.php": "c8d802a6baf968c572f7d47cedeb986fe42ef7cf7af9af2863fcded9a82d97ba",
+    "wordpress/staging/preflight.php": "75d60f13470e79c2c3dab5b85a8d448e1cda20138d670dee681da7325f413bce",
+    "wordpress/staging/render-content.py": "024cf3941f2d503c93685d02845dd8ae644011a5fbd83c36d64c394c74551ae8",
+    "wordpress/staging/test-package.py": "5055c11d42b1f9d1f52c752753570bfe1e0ce9119051f35160236ed3485952f3",
+    "wordpress/staging/tests/check-preflight.php": "1629526389ce09e50c506c4f745d3bb176b503bb5a845c598dcbac1bbb458451",
+    "wordpress/staging/tests/compatibility.compose.yml": "5ab04e311d31caa679fd9eb212edd9678a5f7953506407f3a2279d573ba85434",
+    "wordpress/staging/tests/local-config.php": "83b9b6a0d782b267f2c05aac2f367b8a20a0d188b7f1d00a589fe1c3ac974fae",
+    "wordpress/staging/tests/router.php": "46549ded4f02b46aa9d5ec6274d77cbd784da143aa56b823126cd1c58998ac66",
+    "wordpress/tests/shared-site.cjs": "0f3eeb9a09fbda143a41ed0b54bf67302e22b0158c7948f0545e83c6c04a1e52",
+    "wordpress/tests/site-editor-shared.cjs": "cdb687b6e08cada827ea621473d91d3a4a27c697999b288b4ee872fcc294ad17"
+  },
+  "testInstanceRemoved": true,
+  "originalLocalBaselineRestoredAndVerified": {
+    "wordpress": "6.8.3",
+    "parent": "1.3",
+    "blocks": [
+      94,
+      13,
+      90
+    ],
+    "sharedBlocks": [
+      8,
+      10
+    ],
+    "assets": 7,
+    "originalsUnchanged": true,
+    "parentUnchanged": true,
+    "plugins": 0
+  }
+}
