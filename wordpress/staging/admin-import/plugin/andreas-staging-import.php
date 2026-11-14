@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Andreas spricht – einmaliger Staging-Import
  * Description: Geprüfter Einmalimport ausschließlich für neu.andreasspricht.de. Nach Erfolg entfernbar.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 6.8
  * Requires PHP: 8.1
  * Update URI: false

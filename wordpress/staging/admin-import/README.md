@@ -1,14 +1,16 @@
 # Bordeaux per WordPress-Admin importieren – Issue #16
 
+**Aktuelle Fehlerkorrektur: Version 1.0.1.** [Bisheriges Plugin austauschen / Prüfbericht Issue #18](FIX-18.md).
+
 **Nur Vorbereitung zur Prüfung, noch keine Freigabe zur Installation bei ALL-INKL.** Die bestehende statische Website bleibt unverändert. Der Domainwechsel gehört nicht zu diesem Import.
 
 Der fehlende SSH-Zugang ist laut Issue #16 bestätigt. Dieser Weg ersetzt deshalb die SSH-/WP-CLI-Schritte aus PR #15. Auf dem Hosting werden weder Terminal, Docker, Python, Node.js noch phpMyAdmin benötigt. Alle Inhalte bleiben anschließend in normalen WordPress-Seiten, der Mediathek und dem nativen Website-Editor bearbeitbar.
 
 ## Für Andreas – nach gesonderter Staging-Freigabe
 
-Benötigt wird **genau eine Datei**: [andreas-staging-import.zip](dist/andreas-staging-import.zip). Auf GitHub die ZIP-Datei öffnen und **Download raw file / Rohdatei herunterladen** wählen. Die ursprüngliche ZIP-Datei auf dem iPad unter Dateien/Downloads behalten, nicht den entpackten Ordner auswählen. Keine andere Software installieren.
+Benötigt wird **genau eine Datei**: [andreas-staging-import-1.0.1.zip](dist/andreas-staging-import-1.0.1.zip). Auf GitHub die ZIP-Datei öffnen und **Download raw file / Rohdatei herunterladen** wählen. Die ursprüngliche ZIP-Datei auf dem iPad unter Dateien/Downloads behalten, nicht den entpackten Ordner auswählen. Keine andere Software installieren.
 
-1. Ausschließlich unter **`https://neu.andreasspricht.de/wp-admin/`** als Administrator anmelden. **Plugins → Neues Plugin hinzufügen → Plugin hochladen** öffnen, `andreas-staging-import.zip` auswählen, **Jetzt installieren**, danach **Plugin aktivieren**. Das Paket enthält bereits Child-Theme, vier Originalbilder, drei MP3s und alle fünf Gutenberg-Dokumente. Kein weiterer Datei-Upload ist nötig.
+1. Ausschließlich unter **`https://neu.andreasspricht.de/wp-admin/`** als Administrator anmelden. **Plugins → Neues Plugin hinzufügen → Plugin hochladen** öffnen, `andreas-staging-import-1.0.1.zip` auswählen, **Jetzt installieren**, danach **Plugin aktivieren**. Das Paket enthält bereits Child-Theme, vier Originalbilder, drei MP3s und alle fünf Gutenberg-Dokumente. Kein weiterer Datei-Upload ist nötig.
 2. **Werkzeuge → Bordeaux einmalig importieren** öffnen. Die Vorprüfung zeigt Zieladresse, vorhandene IDs/Inhalte/Plugins und alle geplanten Änderungen. Kontrollieren, dass dies die Staging-Seite ist. Kästchen **„Ich habe die Vorprüfung gelesen …“** aktivieren und **Staging-Import starten** drücken. Den Tab geöffnet lassen. Einzelschritte werden gespeichert; die Bildaufbereitung kann einige Minuten dauern. Währenddessen keine anderen WordPress-Inhalte bearbeiten.
 3. Nach **„Import abgeschlossen“** über **Bordeaux-Vorschau öffnen** die Website prüfen. Anschließend unter **Plugins** das Plugin **„Andreas spricht – einmaliger Staging-Import“** **deaktivieren** und **löschen**. Gegebenenfalls **„Ja, diese Dateien löschen“** bestätigen. Die Website und sämtliche importierten Inhalte bleiben bestehen; das Plugin wird nicht mehr benötigt.
 
@@ -36,7 +38,7 @@ Nach erfolgreichem Import zeigt ein erneuter Aufruf nur **„Import abgeschlosse
 
 - Produktions-ZIP ausschließlich für **`https://neu.andreasspricht.de`**, identische Home-/SiteURL, korrekt von WordPress erkanntes HTTPS und passender Request-Host. Kein Schalter für Live-Domain, beliebige URL oder einen Domainwechsel. Multisite wird abgewiesen.
 - Geprüfter Stand: WordPress **7.1.4**, Twenty Twenty-Five **1.5**, PHP mindestens **8.1** (praktisch geprüft: 8.4.27); abweichende Core-/Parent-Versionen werden bis zur gesonderten Prüfung gesperrt. Keine automatischen Upgrades.
-- Vorhandenes gleichnamiges Child, reservierte Slugs, Bordeaux-Zuordnungen oder gespeicherte Templates/Template-Teile/Global Styles werden gesperrt. Auch alte Overrides werden nicht pauschal entfernt. In einem solchen Fall ist zuerst eine gezielte Entscheidung nötig; es gibt keinen „Trotzdem überschreiben“-Knopf.
+- Vorhandenes gleichnamiges Child, reservierte Slugs, Bordeaux-Zuordnungen sowie Child-/unklare Designobjekte werden gesperrt. Eindeutige Twenty-Twenty-Five-Parent-Objekte und erkennbare, nicht zugeordnete Core-Standardstyles bleiben erhalten und blockieren den Import nicht. Details und Nachweise siehe [Fehlerkorrektur 1.0.1](FIX-18.md). Alte Overrides werden nicht entfernt. In einem solchen Fall ist zuerst eine gezielte Entscheidung nötig; es gibt keinen „Trotzdem überschreiben“-Knopf.
 - Standardpfade `wp-content/themes` und `wp-content/uploads`, keine Symlinks, kein individuelles Upload-CDN, direkt beschreibbare Verzeichnisse und InnoDB-Tabellen erforderlich; persistenter Objektcache wird bis zur gesonderten Prüfung gesperrt. Die normale WordPress-Admin-ZIP-Uploadgröße muss für das ca. 9-MB-Paket ausreichen (gemeldet: 384 MB). Genügend freier Speicher, PHP-Speicher für große Porträts und Zeit zur Bildaufbereitung sind zusätzlich nötig.
 - Nur eingeloggte Administratoren mit den erforderlichen Theme-/Plugin-/Upload-/Editorrechten. CSRF-Nonce, ausdrückliche Bestätigung und unveränderter Prüfplan sind erforderlich. Ein Editor/Redakteur darf den Import nicht starten. Diese Installationsberechtigung ist von der späteren redaktionellen Rolle getrennt.
 - Kein echter ALL-INKL-/Safari-/iPhone-/iPad-Test in dieser Aufgabe. SSL-/Byte-Range-/Cache-/Plugin-/Rechteverhalten und Bearbeitung auf dem echten Hosting erst **nach gesondert genehmigter Installation** abnehmen. `blog_public=0` verhindert keine öffentlichen Browseraufrufe.
