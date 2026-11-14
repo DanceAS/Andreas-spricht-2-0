@@ -1,5 +1,7 @@
 # Späterer Domainwechsel und Rückfall – gesondert freizugeben
 
+**Tarifhinweis aus Issue #16:** Kein SSH/WP-CLI verfügbar. Die WP-CLI-Beispiele unten beschreiben weiterhin den technisch nötigen serialisierungssicheren URL-Abgleich, sind im vorhandenen Tarif aber nicht ausführbar. Ein Browser-/Hoster-gestützter Weg für den späteren Domainwechsel muss separat konkretisiert, getestet und freigegeben werden. Der neue [Admin-Import](admin-import/README.md) führt ausdrücklich keinen Domainwechsel durch.
+
 **Jetzt nichts umstellen.** Ausgangsannahme aus Issue #14: beide Domains liegen beim selben ALL-INKL-Konto, WordPress vollständig im Stagingverzeichnis, statische Live-Seite getrennt. Die tatsächlichen KAS-/`www`-/Zertifikats-/Redirect-Einstellungen sind noch zu bestätigen. Staging-Prüfung und dieser Plan sind keine Betriebsfreigabe.
 
 ## Bevorzugte Variante: Domainzuordnung ändern, WordPress-Verzeichnis behalten

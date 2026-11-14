@@ -1,5 +1,7 @@
 # Spätere Staging-Installation – Ausführungsplan, jetzt nicht ausführen
 
+**Historischer WP-CLI-Plan aus Issue #14.** Seit Issue #16 ist der fehlende SSH-Zugang bestätigt. Für Andreas gilt der neue [Admin-Import ohne Terminal](admin-import/README.md). Die folgenden Befehle sind kein im vorhandenen Tarif nutzbarer Installationsweg; sie bleiben als technische Referenz erhalten.
+
 Nur nach gesonderter Nutzerfreigabe. Ziel ausschließlich `https://neu.andreasspricht.de`, vorhandene Installation `/www/htdocs/w009877d/neu.andreasspricht.de`. Keine automatische Zieländerung, kein DB-Reset, keine bestehende Live-Seite überschreiben. Die untenstehenden WP-CLI-Befehle sind **manuelle Einzelschritte**, kein getesteter unbeaufsichtigter Hostinginstaller. Platzhalter niemals wörtlich ausführen.
 
 ## 1. Ziel feststellen und Konflikte entscheiden

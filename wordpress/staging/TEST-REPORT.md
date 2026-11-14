@@ -1,5 +1,7 @@
 # Prüfbericht Phase 3 – Issue #14
 
+Historischer Bericht für PR #15. Der fehlende SSH-Zugang wurde danach bestätigt; der neue [Admin-Import und dessen aktuelle Nachweise](admin-import/TEST-REPORT.md) gehören zu Issue #16.
+
 Stand **2. November 2026, Europe/Berlin**. Basis main `b4fa624958492d91365c89aef251e3b6da23cd64` (gemergter PR #13). AGENTS.md, aktuelle WordPress-Anleitung, vorhandener Prüfbericht, Seeds, Migrationsbibliothek, Theme-Dateien und Browser-/Editortests wurden gelesen.
 
 ## Vereinbart
