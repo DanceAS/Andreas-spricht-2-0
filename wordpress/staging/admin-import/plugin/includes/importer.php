@@ -82,6 +82,14 @@ final class AS_I16_Importer {
             if (in_array((int)$row['ID'], $owned, true)) { continue; }
             $row['meta'] = get_post_meta((int)$row['ID']);
             $row['terms'] = wp_get_object_terms((int)$row['ID'], array('wp_theme','wp_template_part_area'), array('fields'=>'all'));
+            if (!is_wp_error($row['terms'])) {
+                foreach ($row['terms'] as $index=>$term) {
+                    $row['terms'][$index] = clone $term;
+                    // Aggregate membership counts change when our child parts
+                    // share an area with old parent parts; not an old-object edit.
+                    unset($row['terms'][$index]->count);
+                }
+            }
             $items[] = $row;
         }
         return array('options'=>self::options(), 'existing'=>$items);
@@ -119,7 +127,23 @@ final class AS_I16_Importer {
         }
         $inventory = self::inventory($state);
         foreach ($inventory['existing'] as $row) {
-            self::ensure(!in_array($row['post_type'], array('wp_template','wp_template_part','wp_global_styles'), true), 'Vorhandene Vorlagen/Template-Teile/Global Styles (ID ' . $row['ID'] . '): manuell prüfen, nichts wird überschrieben.');
+            if (in_array($row['post_type'], array('wp_template','wp_template_part','wp_global_styles'), true)) {
+                // WP 7.1.4 resolves saved overrides/user styles by stylesheet NAME,
+                // not by the child theme's Template header. Keep unambiguous parent
+                // objects intact; child/ambiguous objects still conflict.
+                self::ensure(!is_wp_error($row['terms']), 'Theme-Zuordnung konnte nicht geprüft werden (ID ' . $row['ID'] . ').');
+                $themes = array_values(array_filter($row['terms'], static fn($term) => $term->taxonomy === 'wp_theme'));
+                $parent_only = count($themes) === 1 && $themes[0]->name === 'twentytwentyfive' && $themes[0]->slug === 'twentytwentyfive';
+                // Core can create this default without tax_input permissions
+                // during setup/reset. Without wp_theme it cannot match any
+                // stylesheet's user-style query. Do not delete or adopt it.
+                $json = $row['post_type'] === 'wp_global_styles' ? json_decode($row['post_content'], true) : null;
+                $unassigned_default = !$themes && $row['post_type'] === 'wp_global_styles'
+                    && preg_match('/^wp-global-styles-twentytwentyfive(?:-\d+)?$/D', $row['post_name'])
+                    && is_array($json) && ($json['isGlobalStylesUserThemeJSON'] ?? false) === true && ($json['version'] ?? null) === 3;
+                self::ensure($parent_only || $unassigned_default,
+                    'Designkonflikt: ' . $row['post_type'] . ' / ' . $row['post_name'] . ' (ID ' . $row['ID'] . '). Nicht eindeutig dem Parent Twenty Twenty-Five zugeordnet; nichts wird überschrieben.');
+            }
             if (in_array($row['post_type'], array('page','attachment'), true)) {
                 self::ensure(!in_array($row['post_name'], array_values(self::PAGE_SLUGS), true), 'Reservierter Seiten-Slug existiert bereits (ID ' . $row['ID'] . ').');
             }
@@ -245,11 +269,13 @@ final class AS_I16_Importer {
             $r = wp_update_post(array('ID'=>$id,'post_content'=>wp_slash(self::content($data['documents']['pages/' . $name . '.html'], $data, $state))), true);
             self::ensure(!is_wp_error($r), 'Seiteninhalt konnte nicht gespeichert werden.');
         } elseif ($type === 'part') {
-            $id = self::insert(array('post_type'=>'wp_template_part','post_status'=>'publish','post_name'=>$name,'post_title'=>ucfirst($name) . ' – Andreas spricht','post_content'=>self::content($data['documents']['parts/' . $name . '.html'], $data, $state)), $state['uuid']);
-            self::ensure(get_post_field('post_name', $id) === $name, 'Template-Teil-Slug belegt.');
+            // Assign the child before publishing: Core otherwise checks a new
+            // part's slug against the still-active parent's header/footer.
+            $id = self::insert(array('post_type'=>'wp_template_part','post_status'=>'draft','post_name'=>$name,'post_title'=>ucfirst($name) . ' – Andreas spricht','post_content'=>self::content($data['documents']['parts/' . $name . '.html'], $data, $state)), $state['uuid']);
             foreach (array('wp_theme'=>self::CHILD,'wp_template_part_area'=>$name) as $taxonomy=>$term) {
                 self::ensure(!is_wp_error(wp_set_object_terms($id, $term, $taxonomy)), 'Template-Taxonomie konnte nicht gespeichert werden.');
             }
+            self::ensure(!is_wp_error(wp_update_post(array('ID'=>$id,'post_status'=>'publish'), true)) && get_post_field('post_name', $id) === $name, 'Template-Teil konnte nicht mit eindeutigem Child-Slug veröffentlicht werden.');
             $state['parts'][$name] = $id;
         } elseif ($type === 'finish') {
             foreach ($state['pages'] as $slug=>$id) {

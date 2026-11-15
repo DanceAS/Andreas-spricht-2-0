@@ -91,8 +91,8 @@ const counts = () => php(`global $wpdb; echo wp_json_encode($wpdb->get_results("
     wp('option','update','blog_public','1');
     assert.match(await inspect(),/Suchmaschinen-Sichtbarkeit/);
     wp('option','update','blog_public','0');
-    const override = php(`$id=wp_insert_post(array('post_type'=>'wp_template','post_status'=>'publish','post_name'=>'front-page','post_title'=>'Vorhandener Override','post_content'=>'<!-- wp:paragraph --><p>Erhalten</p><!-- /wp:paragraph -->')); wp_set_object_terms($id,'twentytwentyfive','wp_theme'); echo wp_json_encode($id);`);
-    assert.match(await inspect(),/Vorhandene Vorlagen/);
+    const override = php(`$id=wp_insert_post(array('post_type'=>'wp_template','post_status'=>'publish','post_name'=>'front-page','post_title'=>'Vorhandener Override','post_content'=>'<!-- wp:paragraph --><p>Erhalten</p><!-- /wp:paragraph -->')); wp_set_object_terms($id,'andreas-spricht-bordeaux','wp_theme'); echo wp_json_encode($id);`);
+    assert.match(await inspect(),/Designkonflikt/);
     assert.match(wp('post','get',String(override),'--field=post_content'),/Erhalten/);
     wp('post','delete',String(override),'--force');
     wp('eval',`mkdir(WP_CONTENT_DIR.'/themes/andreas-spricht-bordeaux'); file_put_contents(WP_CONTENT_DIR.'/themes/andreas-spricht-bordeaux/preserve.txt','do not overwrite');`);

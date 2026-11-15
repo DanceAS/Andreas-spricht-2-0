@@ -1,0 +1,106 @@
+{
+  "issue": 18,
+  "version": "1.0.1",
+  "baseCommit": "cfee200933477cbb100fd0a37a0e59f42b1c3a52",
+  "hostingAccess": false,
+  "runtime": {
+    "wordpress": "7.1.4",
+    "parent": "1.5",
+    "php": "8.4.27",
+    "mariadb": "10.6.23",
+    "server": "Apache"
+  },
+  "adminImportAndConflicts": {
+    "oldVersionBlocksRegularCoreGlobalStyle": true,
+    "nativeUploadReplacementWithoutReset": true,
+    "fiveRealOrAmbiguousConflictsBlockedAndUnmodified": true,
+    "parentObjectsBytePreservedAcrossSwitch": true,
+    "childResolvesOwnTemplatesAndPartsWithoutParentStyles": {
+      "front-page": {
+        "source": "theme",
+        "theme": "andreas-spricht-bordeaux"
+      },
+      "page": {
+        "source": "theme",
+        "theme": "andreas-spricht-bordeaux"
+      },
+      "index": {
+        "source": "theme",
+        "theme": "andreas-spricht-bordeaux"
+      }
+    },
+    "threeAudioPlayPauseSeek": true,
+    "layouts": [
+      390,
+      1024,
+      1440
+    ],
+    "nativePageEditorSavedReloadedRestored": true,
+    "parentIds": [
+      7,
+      6,
+      12,
+      14,
+      16
+    ],
+    "parentHashes": {
+      "6": "24ef084edf251fcb91f77681fdc0b870f5268e2fab9a8d87d0cab4678c8ce0b0",
+      "7": "aebf701f136a659c0ff57766c5a5fabdf595b513a89fe2dd202fdc66ce80b74b",
+      "12": "19833c4b64929bebdf74b67900d86159b155d8887fee1ee7f44391eab88636a7",
+      "14": "93c7a492447075e738a160ab658c06dc2642840ccdc0ee2c0fa1b843af97a9aa",
+      "16": "0d9a56dffac14fb1135c410a0ae8958379cd6554594d36d007001529580a5d0a"
+    }
+  },
+  "siteEditor": {
+    "header": {
+      "frontendPages": [
+        "home",
+        "impressum",
+        "datenschutz"
+      ],
+      "validBlocksAfterReload": 8,
+      "restoredOnAllPages": [
+        "home",
+        "impressum",
+        "datenschutz"
+      ]
+    },
+    "footer": {
+      "frontendPages": [
+        "home",
+        "impressum",
+        "datenschutz"
+      ],
+      "validBlocksAfterReload": 10,
+      "restoredOnAllPages": [
+        "home",
+        "impressum",
+        "datenschutz"
+      ]
+    }
+  },
+  "offlineBuildChecks": {
+    "byteReproducible": true,
+    "overwriteRefused": true,
+    "productionOriginFixed": true,
+    "protectedPayloadHashMatches": true,
+    "onlyElevenWhitelistedZipMembers": true,
+    "unchangedThemeAndOriginalMedia": true,
+    "noCredentialsTestsOrWpConfig": true,
+    "separateLocalOnlyArtifact": true,
+    "traversalRefused": true,
+    "modifiedOriginalRefused": true,
+    "unmappedReferenceUrlRefused": true
+  },
+  "productionZipSHA256": "7e3a6aece99f8fa6b1602b6812305e6473d6cbbdea07cdd42960c48306b8c1e5",
+  "productionAndTestCodeIdenticalExceptFixedOriginAndTestName": true,
+  "payloadUnchangedFrom100": true,
+  "sourceHashes": {
+    "wordpress/staging/admin-import/plugin/includes/importer.php": "ee39ad6f06d58dbdc91cc979a225df07f7572dff32d66dadf63791bf1ec5af67",
+    "wordpress/staging/admin-import/plugin/andreas-staging-import.php": "cc8948fd14546af2299b1d062408a72d9d655f756b1944fd0b551283742801aa",
+    "wordpress/staging/admin-import/tests/design-conflicts.cjs": "74580a1f6cc4795dabf7b6b49555bc3f582d998086886c81415b81936faed2e3"
+  },
+  "parentHashesStillUnchangedAfterSiteEditor": true,
+  "isolatedIssue18ProjectRemoved": true,
+  "previousLocalPreviewRestored": true
+}
