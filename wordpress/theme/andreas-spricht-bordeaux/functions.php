@@ -8,7 +8,7 @@ add_action('after_setup_theme', function () {
 add_action('wp_enqueue_scripts', function () {
     $uri = get_stylesheet_directory_uri();
     wp_enqueue_style('as-phase1', $uri . '/prototype.css', array(), '0.1.0');
-    wp_enqueue_style('as-reference', $uri . '/reference.css', array(), '0.2.0');
+    wp_enqueue_style('as-reference', $uri . '/reference.css', array(), '0.3.1');
     wp_enqueue_style('as-blocks', $uri . '/blocks.css', array('as-reference'), '0.2.0');
     wp_enqueue_script('as-player', $uri . '/player.js', array(), '0.2.0', true);
     wp_localize_script('as-player', 'asPlayerLabels', array(

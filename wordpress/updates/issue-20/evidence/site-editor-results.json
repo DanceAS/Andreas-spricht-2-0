@@ -1,0 +1,28 @@
+{
+  "header": {
+    "frontendPages": [
+      "home",
+      "impressum",
+      "datenschutz"
+    ],
+    "validBlocksAfterReload": 8,
+    "restoredOnAllPages": [
+      "home",
+      "impressum",
+      "datenschutz"
+    ]
+  },
+  "footer": {
+    "frontendPages": [
+      "home",
+      "impressum",
+      "datenschutz"
+    ],
+    "validBlocksAfterReload": 10,
+    "restoredOnAllPages": [
+      "home",
+      "impressum",
+      "datenschutz"
+    ]
+  }
+}
