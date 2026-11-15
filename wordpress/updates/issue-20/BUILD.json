@@ -1,0 +1,30 @@
+{
+  "version": "0.3.1",
+  "baseCommit": "8dc9ddb0894890a8011a09de586da26376dfee80",
+  "zipSha256": "4bdb3eac442a3899985c17eafb9b219d28f839a728b3fa81e5736d868ef0858f",
+  "files": {
+    "andreas-spricht-bordeaux/blocks.css": "955c6a933f78db8642645f4bc613defbc514bb28f57afd3f7670407ea09573a6",
+    "andreas-spricht-bordeaux/facebook.svg": "fbaf801b913da49204fb75c731102fe8182851398420ab298897b13448c6cc52",
+    "andreas-spricht-bordeaux/fit-sample-intro.js": "828062fa2716eba55b3de19cad904bd2043077bc64a16e40b9ccd25b23fa6322",
+    "andreas-spricht-bordeaux/functions.php": "c598a92f98929e88a944dea8f9dca9ebc8a67607377b77880bb9eaf256221fb5",
+    "andreas-spricht-bordeaux/mobile-about-portrait.js": "d7f840827a72632e10234f31d110ca08c536d630133e314c89d4295bce30e60c",
+    "andreas-spricht-bordeaux/player.js": "e6761a7a994dc7795ccfe7795cef347a0e3e47f88e99d58671dadd07813ec994",
+    "andreas-spricht-bordeaux/prototype.css": "5b40cf010d89408a175192bc3d0af9b91153964816b4ac185096280e674f3707",
+    "andreas-spricht-bordeaux/reference.css": "b8dd11fc6bea5abef3db4d824705724f03f8beea2f1c0c38d2d10cd3eb759d90",
+    "andreas-spricht-bordeaux/style.css": "58765ede5fd2b2a00454d17e3cfc3777eef12faa86952f1df6e3f8fd1725feab",
+    "andreas-spricht-bordeaux/theme.json": "7a5cf27ba0bbe872818f6b2c4c145933b5b1665e813daf4868a16af85f9b2f22",
+    "andreas-spricht-bordeaux/parts/footer.html": "2ed7c5610bbbb0136e18e6b8673ef245ed5dbb5176012d6f8e1de1eb4dac6065",
+    "andreas-spricht-bordeaux/parts/header.html": "887bd5ed631bbee6185bc7df8ba13f1d82fe7a811d68a38e0e257e0434e5bf31",
+    "andreas-spricht-bordeaux/patterns/footer.html": "8027007c704e44ca73ae7f6b5ba686ccee3562683b1edad5a2d4dbd9075a0dd9",
+    "andreas-spricht-bordeaux/patterns/header.html": "486cb3d090c382d390213896a5e1d423a2a5821e03a8fc3e4acd07bdb81fa15c",
+    "andreas-spricht-bordeaux/templates/front-page.html": "1b758654b3d5e799cd2c4c723e4ba475ce5838a6318ef56452f005a0c61c1fc3",
+    "andreas-spricht-bordeaux/templates/index.html": "1b758654b3d5e799cd2c4c723e4ba475ce5838a6318ef56452f005a0c61c1fc3",
+    "andreas-spricht-bordeaux/templates/page.html": "1b758654b3d5e799cd2c4c723e4ba475ce5838a6318ef56452f005a0c61c1fc3"
+  },
+  "changedThemeFiles": [
+    "andreas-spricht-bordeaux/functions.php",
+    "andreas-spricht-bordeaux/reference.css",
+    "andreas-spricht-bordeaux/style.css"
+  ],
+  "zipMatchesSources": true
+}
