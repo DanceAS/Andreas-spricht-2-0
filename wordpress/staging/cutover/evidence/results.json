@@ -1,0 +1,22 @@
+{
+  "localOnly": true,
+  "hostingTested": false,
+  "realSafariTest": false,
+  "source": "http://127.0.0.1:8890",
+  "target": "http://localhost:8890",
+  "pluginVersion": "1.4.11",
+  "pluginCommit": "7838902445fb854dd9f64e0f7ecfd670e94a5d6d",
+  "initialDryRun": "DRY RUN: 12 tables were searched, 15 cells were found that need to be updated, and 0 changes were made.Click here for more details, or use the form below to run the search/replace.",
+  "dryRunPreservedContent": true,
+  "nativeSettingsAndNewHostLogin": true,
+  "finalDryRun": "DRY RUN: 12 tables were searched, 13 cells were found that need to be updated, and 0 changes were made.Click here for more details, or use the form below to run the search/replace.",
+  "replace": "During the search/replace, 12 tables were searched, with 13 cells changed in 13 updates.Click here for more details.",
+  "escapedDryRun": "DRY RUN: 12 tables were searched, 1 cells were found that need to be updated, and 0 changes were made.Click here for more details, or use the form below to run the search/replace.",
+  "escapedReplace": "During the search/replace, 12 tables were searched, with 1 cells changed in 1 updates.Click here for more details.",
+  "serializedNestedAndEscapedJsonPreserved": true,
+  "guidsUnchanged": true,
+  "threePagesWithoutOldRenderedUrls": true,
+  "threeAudioPlayPauseSeekChromium": true,
+  "indexingStillBlocked": true,
+  "privateSqlRestoreVerified": true
+}
