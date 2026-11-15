@@ -1,0 +1,59 @@
+# Disposable local WordPress; theme is uploaded, not bind-mounted.
+name: andreas-spricht-issue22
+services:
+  db:
+    image: mariadb:10.6.23@sha256:78f6411897a1971b6b55b975cda6ff6fea1e405d10f500451662cfc08699d709
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: ${WP_DB_PASSWORD:?Run setup.sh first}
+      MARIADB_ROOT_PASSWORD: ${WP_DB_ROOT_PASSWORD:?Run setup.sh first}
+    volumes:
+      - database:/var/lib/mysql
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+  wordpress:
+    image: wordpress:7.1.4-php8.4-apache@sha256:63dbbdf2c9ea29a2e4f417c0d4e7c4b821725d115127f70838dbbc5051ee4db0
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - '127.0.0.1:8890:80'
+    environment: &wp-environment
+      WORDPRESS_DEBUG: '1'
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${WP_DB_PASSWORD}
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_ENVIRONMENT_TYPE', 'local');
+        define('WP_HTTP_BLOCK_EXTERNAL', true);
+        define('DISABLE_WP_CRON', true);
+        define('DISALLOW_FILE_EDIT', true);
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', false);
+    volumes: &wp-volumes
+      - ../uploads.ini:/usr/local/etc/php/conf.d/as-local-uploads.ini:ro
+      - site:/var/www/html
+      - ../staging:/staging:ro
+      - ../content:/prototype:ro
+      - ../.local-assets:/reference-assets:ro
+  cli:
+    image: wordpress:cli-php8.4@sha256:807d746b7122d004c3d3768d77f221acedbd17b98ffe9646a9388627a36cdbc7
+    profiles: [tools]
+    user: '33:33'
+    environment:
+      <<: *wp-environment
+      HOME: /tmp
+      WP_ADMIN_USER: ${WP_ADMIN_USER}
+      WP_ADMIN_PASSWORD: ${WP_ADMIN_PASSWORD}
+    volumes: *wp-volumes
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  database:
+  site:

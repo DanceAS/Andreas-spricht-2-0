@@ -1,5 +1,7 @@
 # Phase 3 – ALL-INKL-Staging vorbereiten
 
+**Aktueller Folgeschritt, Issue #22:** Staging und Geräte-/Editorprüfungen sind laut Nutzer bestanden. Der [konkrete Browser-Umstellungsplan](CUTOVER.md) ersetzt die alten CLI-Beispiele zum Domainwechsel. KAS-Befund und frische Sicherung sind noch offen; die folgenden Installationsangaben dokumentieren die historische Vorbereitung.
+
 **Aktualisierung Issue #16:** Der Tarif enthält laut Andreas keinen SSH-Zugang. Der neue [WordPress-Admin-Einmalimport](admin-import/README.md) mit einem temporären ZIP-Plugin ersetzt die folgenden SSH-/WP-CLI-Installationsschritte für Andreas. Noch keine Hostingfreigabe; der ursprüngliche Plan und seine Nachweise bleiben nachvollziehbar.
 
 Stand: 2. November 2026. Auftrag: [Issue #14](https://github.com/DanceAS/Andreas-spricht-2-0/issues/14), Ausgangspunkt main `b4fa624` mit gemergtem PR #13. AGENTS.md bleibt verbindlich. Dieses Verzeichnis bereitet die Installation vor; **es installiert nichts bei ALL-INKL**. Keine Freigabe zum Merge, Deployment oder Domainwechsel.
